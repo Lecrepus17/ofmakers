@@ -1,0 +1,1 @@
+Temperatura: 25.0 ºC  Humidade: 55 %  Horário: 16:44:00  Data: 06/07/2022

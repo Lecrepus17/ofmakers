@@ -1,0 +1,5 @@
+Temperatura: 24.0 ºC  Humidade: 50 %  Horário: 13:13:50  Data: 06/07/2022
+Temperatura: 24.0 ºC  Humidade: 50 %  Horário: 13:18:51  Data: 06/07/2022
+Temperatura: 24.0 ºC  Humidade: 50 %  Horário: 13:23:51  Data: 06/07/2022
+Temperatura: 23.0 ºC  Humidade: 50 %  Horário: 13:31:50  Data: 06/07/2022
+Temperatura: 23.0 ºC  Humidade: 50 %  Horário: 13:39:22  Data: 06/07/2022
