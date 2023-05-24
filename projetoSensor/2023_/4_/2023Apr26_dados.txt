@@ -1,2 +1,0 @@
-Temperatura: 21.0 ºC  Humidade: 69 %  Horário: 14:31:58  Data: 26/04/2023
-Temperatura: 21.0 ºC  Humidade: 69 %  Horário: 14:32:09  Data: 26/04/2023
