@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `dados` (
-  `iddados` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `temperatura` float NOT NULL,
   `umidade` int(11) NOT NULL,
   `tempo` datetime NOT NULL
@@ -38,7 +38,7 @@ CREATE TABLE `dados` (
 -- Despejando dados para a tabela `dados`
 --
 
-INSERT INTO `dados` (`iddados`, `temperatura`, `umidade`, `tempo`) VALUES
+INSERT INTO `dados` (`id`, `temperatura`, `umidade`, `tempo`) VALUES
 (146, 18, 69, '2023-05-31 14:11:34'),
 (147, 18, 69, '2023-05-31 14:11:45'),
 (148, 18, 69, '2023-05-31 14:11:55'),
