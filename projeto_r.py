@@ -51,19 +51,15 @@ while True:
               year_old = year
               foldername =  ("{}_".format( year ))
               if os.path.exists(foldername):
-                print("o diretorio existe")
               else:
                 os.mkdir(foldername)
             foldername_m = ("{}/{}_". format( foldername, month_str ))
             if os.path.exists(foldername_m):
-              print("o diretorio existe")
             else:
               os.mkdir(foldername_m)
           filename = ("{}/{}{}{}_dados.txt".format( foldername_m, year, monthName, day_str))
           f = open(filename, "a")
           f.close
-          print ( foldername )
-          print ( filename )
         else:
         # com uma funcao / metodo especifico para isso
         # Abrindo o arquivo para escrever
