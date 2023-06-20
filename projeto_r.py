@@ -15,7 +15,6 @@ dhtDevice = adafruit_dht.DHT11(board.D4, use_pulseio=False)
 day_old = 0
 year_old = 0
 month_old = 0
-caminho = "/var/www/html/"
 while True:
     try:
 
@@ -53,19 +52,15 @@ while True:
             month_old = month
             if year != year_old:
               year_old = year
-              foldername =  ("{}{}_".format( caminho, year ))
+              foldername =  ("{}{}_".format( year ))
               if os.path.exists(foldername):
-                print("o diretorio existe")
               else:
                 os.mkdir(foldername)
             foldername_m = ("{}/{}_". format( foldername, month_str ))
             if os.path.exists(foldername_m):
-              print("o diretorio existe")
             else:
               os.mkdir(foldername_m)
           filename = ("{}/{}{}{}_dados.txt".format( foldername_m, year, monthName, day_str))
-          print ( foldername )
-          print ( filename )
         else:
 	# com uma funcao / metodo especifico para isso
         # Abrindo o arquivo para escrever
