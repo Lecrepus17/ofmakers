@@ -51,14 +51,14 @@
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-    
-    
 
-        
 
-            
-        
-        
+
+
+
+
+
+
     </nav><!-- End Icons Navigation -->
 
   </header><!-- End Header -->
@@ -380,7 +380,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>23 °C</h6>
-                      <span class="text-success small pt-1 fw-bold">18%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <span class="text-success small pt-1 fw-bold">18%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
 
                     </div>
                   </div>
@@ -416,7 +416,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>12%</h6>
-                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
 
                     </div>
                   </div>
