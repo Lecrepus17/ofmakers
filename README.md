@@ -1,8 +1,6 @@
 # ofmakers
-<<<<<<< HEAD
-sudo /opt/lampp/xampp start apache  sudo apt-get install php-mysql
-=======
-sudo /opt/lampp/xampp start apache
+sudo /opt/lampp/xampp start apache  
+sudo apt-get install php-mysql
 
 php.ini 
 alterações
