@@ -1,9 +1,5 @@
 # ofmakers
-<<<<<<< Updated upstream
 sudo /opt/lampp/xampp start apache  
-=======
-sudo /opt/lampp/xampp start apache
->>>>>>> Stashed changes
 sudo apt-get install php-mysql
 
 php.ini 
@@ -21,3 +17,6 @@ sudo nano php.ini
 ;extension=xml
 
 reinicie o apache
+
+php artisan migrate:rollback
+php artisan migrate --seed
