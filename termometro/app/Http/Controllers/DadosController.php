@@ -32,3 +32,5 @@ class CreateDadosTable extends Migration
         Schema::dropIfExists('dados');
     }
 }
+
+
