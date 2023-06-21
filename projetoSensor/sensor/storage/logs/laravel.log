@@ -147,3 +147,525 @@ Did you mean one of these?
 #5 /home/ofmakers/Documentos/projetoSensor/sensor/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #6 {main}
 "} 
+[2023-06-20 11:34:37] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#12 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#12 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#13 {main}
+"} 
+[2023-06-20 11:34:37] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#8 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#9 {main}
+"} 
+[2023-06-21 12:37:59] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#12 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#12 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#13 {main}
+"} 
+[2023-06-21 12:37:59] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#8 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#9 {main}
+"} 
+[2023-06-21 12:38:11] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#12 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#12 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#13 {main}
+"} 
+[2023-06-21 12:38:11] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#8 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#9 {main}
+"} 
+[2023-06-21 12:40:29] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#12 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#12 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#13 {main}
+"} 
+[2023-06-21 12:40:29] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#8 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#9 {main}
+"} 
+[2023-06-21 12:40:53] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#12 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#12 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#13 {main}
+"} 
+[2023-06-21 12:40:53] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#8 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#9 {main}
+"} 
+[2023-06-21 12:41:38] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#12 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#12 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#13 {main}
+"} 
+[2023-06-21 12:41:38] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#8 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#9 {main}
+"} 
+[2023-06-21 12:41:41] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#12 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#12 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#13 {main}
+"} 
+[2023-06-21 12:41:41] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#8 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#9 {main}
+"} 
+[2023-06-21 12:42:40] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#12 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#12 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#13 {main}
+"} 
+[2023-06-21 12:42:40] production.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#8 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#9 {main}
+"} 
+[2023-06-21 12:45:39] local.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#12 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(169): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()
+#9 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#10 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#11 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
+#12 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#13 {main}
+"} 
+[2023-06-21 12:45:39] local.ERROR: Target class [Fruitcake\Cors\HandleCors] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [Fruitcake\\Cors\\HandleCors] does not exist. at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:916)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#8 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"Fruitcake\\Cors\\HandleCors\" does not exist at /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(914): ReflectionClass->__construct()
+#1 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#2 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(933): Illuminate\\Container\\Container->resolve()
+#3 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#4 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(918): Illuminate\\Container\\Container->make()
+#5 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(249): Illuminate\\Foundation\\Application->make()
+#6 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(213): Illuminate\\Foundation\\Http\\Kernel->terminateMiddleware()
+#7 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->terminate()
+#8 /home/ofmakers/Documentos/ofmakers/projetoSensor/sensor/server.php(21): require_once('...')
+#9 {main}
+"} 
