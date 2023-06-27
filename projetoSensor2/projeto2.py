@@ -11,6 +11,13 @@ import mysql.connector
 
 dhtDevice = adafruit_dht.DHT11(board.D4, use_pulseio=False)
 day_old = 0
+# Estabelecendo uma conexão com o banco de dados MySQL
+db = mysql.connector.connect(
+host='localhost',
+database='termometro',
+user='user',
+password='123'
+)
 while True:
     try:
         
@@ -25,15 +32,32 @@ while True:
 	# Atualiza o dia
         if day != day_old:
           day_old = day
+          if month != month_old:
+            month_old = month
+            if year != year_old:
+              year_old = year
+              foldername =  ("{}_".format( year ))
+              if os.path.exists(foldername):
+              else:
+                os.mkdir(foldername)
+            foldername_m = ("{}/{}_". format( foldername, month_str ))
+            if os.path.exists(foldername_m):
+            else:
+              os.mkdir(foldername_m)
+          filename = ("{}/{}{}{}_dados.txt".format( foldername_m, year, monthName, day_str))
+          # fechando conexão com arquivo
+          f = open(filename, "a")
+          f.close
+          # finaliza conexão
+          db.close()
         else:
-          # Estabelecendo uma conexão com o banco de dados MySQL
-          db = mysql.connector.connect(
-          host='localhost',
-          database='termometro',
-          user='user',
-          password='123'
-          )
-
+	# com uma funcao / metodo especifico para isso
+        # Abrindo o arquivo para escrever
+       	  f = open(filename, "a")
+        # Escrevendo no arquivo as informações
+          f.write("Temperatura: {:.1f} ºC  Humidade: {} %  Horário: {}:{}:{}  Data: {}/{}/{}\n".format(
+                temperature_c, humidity, hour_str, min_str, sec_str, day_str, month_str, year
+            ))
           # Criando um cursor para executar consultas SQL
           cursor = db.cursor()
 
@@ -50,8 +74,6 @@ while True:
 
           # Confirmar a transação
           db.commit()
-          # finaliza conexão
-          db.close()
         # Cooldown da função
           time.sleep(10.0)
     except RuntimeError as error:
