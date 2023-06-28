@@ -75,83 +75,6 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Alerts</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Accordion</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Badges</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-breadcrumbs.html">
-              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-buttons.html">
-              <i class="bi bi-circle"></i><span>Buttons</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-cards.html">
-              <i class="bi bi-circle"></i><span>Cards</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-carousel.html">
-              <i class="bi bi-circle"></i><span>Carousel</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-list-group.html">
-              <i class="bi bi-circle"></i><span>List group</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-modal.html">
-              <i class="bi bi-circle"></i><span>Modal</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tabs.html">
-              <i class="bi bi-circle"></i><span>Tabs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-pagination.html">
-              <i class="bi bi-circle"></i><span>Pagination</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-progress.html">
-              <i class="bi bi-circle"></i><span>Progress</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-spinners.html">
-              <i class="bi bi-circle"></i><span>Spinners</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tooltips.html">
-              <i class="bi bi-circle"></i><span>Tooltips</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -341,11 +264,16 @@
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cart"></i>
+                        @if (5 > 10)
+                        <i class="bi bi-thermometer-sun"></i>
+                        @else
+                        <i class="bi bi-thermometer-snow"></i>
+                        @endif
+
                     </div>
                     <div class="ps-3">
                       <h6>15 °C</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
+                      <span class="text-success small pt-1 fw-bold">16%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
 
                     </div>
                   </div>
@@ -376,11 +304,11 @@
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
+                      <i class="bi bi-calendar"></i>
                     </div>
                     <div class="ps-3">
                       <h6>23 °C</h6>
-                      <span class="text-success small pt-1 fw-bold">18%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
+                      <span class="text-success small pt-1 fw-bold">17%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
 
                     </div>
                   </div>
@@ -408,15 +336,15 @@
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Umidade de Hoje <span>| Maior</span></h5>
+                  <h5 class="card-title">Temperatura atual <span></span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people"></i>
+                      <i class="bi bi-thermometer-sun"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>12%</h6>
-                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
+                      <h6>20 °C</h6>
+                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
 
                     </div>
                   </div>
@@ -437,14 +365,14 @@
                       <h6>Filter</h6>
                     </li>
 
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                    <li><a class="dropdown-item" href="#">Hoje</a></li>
+                    <li><a class="dropdown-item" href="#">Esse mês</a></li>
+                    <li><a class="dropdown-item" href="#">Esse ano</a></li>
                   </ul>
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Reports <span>/Today</span></h5>
+                  <h5 class="card-title">Gráfico <span>/Hoje</span></h5>
 
                   <!-- Line Chart -->
                   <div id="reportsChart"></div>
@@ -507,25 +435,19 @@
 
             <!-- Recent Sales -->
             <div class="col-12">
-              <div class="card recent-sales overflow-auto">
 
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
 
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
+              <div class="card ">
+
+
 
                 <div class="card-body">
                   <h5 class="card-title">Temperatura recente <span>| Hoje</span></h5>
-
-                  <table class="table table-borderless datatable">
+                    <form action="#">
+                        <input type="datetime-local" id="pesquisaData">
+                        <input type="submit" placeholder="Pesquisar">
+                    </form>
+                  <table class="table ">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
@@ -541,35 +463,35 @@
                         <td>13.6 ºC</td>
                         <td><a href="#" class="text-primary">18%</a></td>
                         <td>2023-05-31 14:11:34</td>
-                        <td><span class="badge bg-success">Approved</span></td>
+                        <td><span class="badge bg-danger">Apagar</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#1</a></th>
                         <td>13.4 ºC</td>
                         <td><a href="#" class="text-primary">18%</a></td>
                         <td>2023-05-31 14:12:34</td>
-                        <td><span class="badge bg-success">Approved</span></td>
+                        <td><span class="badge bg-danger">Apagar</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#1</a></th>
                         <td>13.6 ºC</td>
                         <td><a href="#" class="text-primary">18%</a></td>
                         <td>2023-05-31 14:13:34</td>
-                        <td><span class="badge bg-success">Approved</span></td>
+                        <td><span class="badge bg-danger">Apagar</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#1</a></th>
                         <td>13.2 ºC</td>
                         <td><a href="#" class="text-primary">18%</a></td>
                         <td>2023-05-31 14:14:34</td>
-                        <td><span class="badge bg-success">Approved</span></td>
+                        <td><span class="badge bg-danger">Apagar</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#1</a></th>
                         <td>13.2 ºC</td>
                         <td><a href="#" class="text-primary">18%</a></td>
                         <td>2023-05-31 14:15:34</td>
-                        <td><span class="badge bg-success">Approved</span></td>
+                        <td><span class="badge bg-danger">Apagar</span></td>
                       </tr>
                     </tbody>
                   </table>
@@ -580,78 +502,6 @@
             </div><!-- End Recent Sales -->
 
             <!-- Top Selling -->
-            <div class="col-12">
-              <div class="card top-selling overflow-auto">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body pb-0">
-                  <h5 class="card-title">Top Selling <span>| Today</span></h5>
-
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th scope="col">Preview</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Sold</th>
-                        <th scope="col">Revenue</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                        <td>$64</td>
-                        <td class="fw-bold">124</td>
-                        <td>$5,828</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                        <td>$46</td>
-                        <td class="fw-bold">98</td>
-                        <td>$4,508</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                        <td>$59</td>
-                        <td class="fw-bold">74</td>
-                        <td>$4,366</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                        <td>$32</td>
-                        <td class="fw-bold">63</td>
-                        <td>$2,016</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                        <td>$79</td>
-                        <td class="fw-bold">41</td>
-                        <td>$3,239</td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-                </div>
-
-              </div>
-            </div><!-- End Top Selling -->
 
           </div>
         </div><!-- End Left side columns -->
