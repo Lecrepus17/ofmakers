@@ -462,7 +462,7 @@
                         <tr>
                             <th scope="row"><a href="#">#1</a></th>
                             <td>{{ $dado->temperatura }} ºC</td>
-                            <td><a href="#" class="text-primary"> {{ $dado->umidade }}%</a></td>
+                            <td>{{ $dado->umidade }}%</td>
                             <td>{{ $dado->tempo }}</td>
                             <td><span class="badge bg-danger">Apagar</span></td>
                           </tr>
