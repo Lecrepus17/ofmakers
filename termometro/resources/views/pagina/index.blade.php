@@ -458,6 +458,15 @@
                       </tr>
                     </thead>
                     <tbody>
+                        @foreach ( $dados  as $dado)
+                        <tr>
+                            <th scope="row"><a href="#">#1</a></th>
+                            <td>{{ $dado->temperatura }} ºC</td>
+                            <td><a href="#" class="text-primary"> {{ $dado->umidade }}%</a></td>
+                            <td>{{ $dado->tempo }}</td>
+                            <td><span class="badge bg-danger">Apagar</span></td>
+                          </tr>
+                        @endforeach
                       <tr>
                         <th scope="row"><a href="#">#1</a></th>
                         <td>13.6 ºC</td>
