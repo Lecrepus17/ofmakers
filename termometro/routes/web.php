@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/index', [DadosController::class, 'index'])->name('bootstrap');
+Route::get('/index2', [DadosController::class, 'index2'])->name('index2');
