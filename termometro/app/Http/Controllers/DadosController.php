@@ -13,14 +13,14 @@ class DadosController extends Controller
     // pesquisa e paginação principal
     public function index2(Request $request){
         if ($request->isMethod('POST')){
-            /**
+
             $ord = $request->ord == 'asc' ? 'asc' : 'desc';
             $busca = $request->busca;
             $busca2 = $request->busca2;
             $dados = Dado::where('tempo', 'BETWEEN', "{$busca} AND {$busca2}")->orderBy('tempo', $ord)->paginate();
             return view('Dados.index', [
                 'dados' => $dados,
-            ]);*/
+            ]);
         } else {
         $dados = Dado::orderBy('tempo', 'desc')->paginate();
 
