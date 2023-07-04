@@ -24,8 +24,8 @@ class DadosController extends Controller
         } else {
         $dados = Dado::orderBy('tempo', 'desc')->paginate();
 
-    }        dd($dados);
-        return view('Dados.index', [
+    }
+        return view('pagina.index', [
             'dados' => $dados,
         ]);}
     // mostra mais especifica de datas
