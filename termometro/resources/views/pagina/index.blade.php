@@ -467,41 +467,7 @@
                             <td><span class="badge bg-danger">Apagar</span></td>
                           </tr>
                         @endforeach
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>13.6 ºC</td>
-                        <td><a href="#" class="text-primary">18%</a></td>
-                        <td>2023-05-31 14:11:34</td>
-                        <td><span class="badge bg-danger">Apagar</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>13.4 ºC</td>
-                        <td><a href="#" class="text-primary">18%</a></td>
-                        <td>2023-05-31 14:12:34</td>
-                        <td><span class="badge bg-danger">Apagar</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>13.6 ºC</td>
-                        <td><a href="#" class="text-primary">18%</a></td>
-                        <td>2023-05-31 14:13:34</td>
-                        <td><span class="badge bg-danger">Apagar</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>13.2 ºC</td>
-                        <td><a href="#" class="text-primary">18%</a></td>
-                        <td>2023-05-31 14:14:34</td>
-                        <td><span class="badge bg-danger">Apagar</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>13.2 ºC</td>
-                        <td><a href="#" class="text-primary">18%</a></td>
-                        <td>2023-05-31 14:15:34</td>
-                        <td><span class="badge bg-danger">Apagar</span></td>
-                      </tr>
+
                     </tbody>
                   </table>
 
