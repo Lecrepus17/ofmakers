@@ -8,11 +8,8 @@ use Illuminate\Http\Request;
 
 class DadosController extends Controller
 {
-    public function index(){
-        return view('pagina.index');
-    }
-    // pesquisa e paginação principal
-    public function index2(Request $request){
+
+    public function index(Request $request){
         if ($request->isMethod('POST')){
 
             $ord = $request->ord == 'asc' ? 'asc' : 'desc';
