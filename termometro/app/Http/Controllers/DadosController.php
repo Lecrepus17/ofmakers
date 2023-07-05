@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dado;
-use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 
 class DadosController extends Controller
