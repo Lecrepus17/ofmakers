@@ -234,7 +234,30 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.dropdown-item').click(function(e) {
+          e.preventDefault();
 
+          var option = $(this).text();
+          $('#filter-option').text(option);
+
+          // Atualizar os valores com base na opção selecionada
+          switch (option) {
+            case 'Maior':
+              $('.temperature-value').text('25 °C');
+              break;
+            case 'Menor':
+              $('.temperature-value').text('10 °C');
+              break;
+            case 'Média':
+              $('.temperature-value').text('18 °C');
+              break;
+          }
+        });
+      });
+    </script>
     <section class="section dashboard">
       <div class="row">
 
@@ -260,7 +283,7 @@
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title"> Temperatura de Hoje <span>| Maior</span></h5>
+                  <h5 class="card-title"> Temperatura de Hoje <span>| <span id="filter-option">Maior</span></span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -272,7 +295,7 @@
 
                     </div>
                     <div class="ps-3">
-                      <h6>15 °C</h6>
+                      <h6 class="temperature-value">15 °C</h6>
                       <span class="text-success small pt-1 fw-bold">16%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
 
                     </div>
