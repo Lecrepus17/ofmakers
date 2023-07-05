@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dado;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 
 class DadosController extends Controller
@@ -24,14 +25,22 @@ class DadosController extends Controller
         } else {
         $dados = Dado::orderBy('tempo', 'desc')->paginate();
 
+        $graficoDia = Dado::orderBy('tempo', 'desc')->limit(7)->get();
+
+        $resposta = json_decode($graficoDia, true); // Converte a string JSON para um array associativo
+
+        $temperaturas = collect($resposta)->pluck('temperatura');
+        $umidade = collect($resposta)->pluck('umidade');
     }
         return view('pagina.index', [
             'dados' => $dados,
+            'temp' => $temperaturas,
+            'umid' => $umidade
         ]);}
     // mostra mais especifica de datas
     public function view(Dado $dado){
         return view('Dados.view',[
-            'prod' => $dado
+            'dado' => $dado
         ]);
     }
     // caso necessite deletar

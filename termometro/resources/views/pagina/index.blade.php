@@ -382,10 +382,10 @@
                       new ApexCharts(document.querySelector("#reportsChart"), {
                         series: [{
                           name: 'Temperatura',
-                          data: [14, 40, 28, 51, 42, 70, 56],
+                          data: {{$temp}},
                         }, {
                           name: 'Umidade',
-                          data: [50, 32, 45, 32, 34, 52, 41]
+                          data: {{ $umid}}
                         }],
                         chart: {
                           height: 350,
@@ -443,7 +443,7 @@
 
                 <div class="card-body">
                   <h5 class="card-title">Temperatura recente <span>| Hoje</span></h5>
-                    <form action="#">
+                    <form action="">
                         <input type="datetime-local" name="busca" id="pesquisaData">
                         <input type="datetime-local" name="busca2" id="pesquisaData">
                         <input type="submit" placeholder="Pesquisar">
@@ -463,7 +463,7 @@
                         <tr>
                             <th scope="row"><a href="#">#1</a></th>
                             <td>{{ $dado->temperatura }} ºC</td>
-                            <td>{{ $dado->umidade }}%</td>
+                            <td><a href="#" class="text-primary"> {{ $dado->umidade }}%</a></td>
                             <td>{{ $dado->tempo }}</td>
                             <td><span class="badge bg-danger">Apagar</span></td>
                           </tr>
