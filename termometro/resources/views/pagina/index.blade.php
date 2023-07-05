@@ -444,7 +444,8 @@
                 <div class="card-body">
                   <h5 class="card-title">Temperatura recente <span>| Hoje</span></h5>
                     <form action="#">
-                        <input type="datetime-local" id="pesquisaData">
+                        <input type="datetime-local" name="busca" id="pesquisaData">
+                        <input type="datetime-local" name="busca2" id="pesquisaData">
                         <input type="submit" placeholder="Pesquisar">
                     </form>
                   <table class="table ">
@@ -467,7 +468,6 @@
                             <td><span class="badge bg-danger">Apagar</span></td>
                           </tr>
                         @endforeach
-
                     </tbody>
                   </table>
 
