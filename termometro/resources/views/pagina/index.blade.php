@@ -443,9 +443,13 @@
 
                 <div class="card-body">
                   <h5 class="card-title">Temperatura recente <span>| Hoje</span></h5>
-                    <form action="">
-                        <input type="datetime-local" name="busca" id="pesquisaData">
-                        <input type="datetime-local" name="busca2" id="pesquisaData">
+                    <form method="POST" action="{{ route('index') }}">
+                        @csrf
+                        <input type="date" name="busca" id="pesquisaData">
+                        <select name="ord">
+                            <option value="asc">Crescente</option>
+                            <option value="desc">Decrescente</option>
+                        </select>
                         <input type="submit" placeholder="Pesquisar">
                     </form>
                   <table class="table ">

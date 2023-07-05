@@ -17,6 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', [DadosController::class, 'index'])->name('bootstrap');
-Route::get('/index2', [DadosController::class, 'index2'])->name('index2');
-Route::post('/index2', [DadosController::class, 'index2']);
+Route::get('/index', [DadosController::class, 'index'])->name('index');
+Route::post('/index', [DadosController::class, 'index']);
