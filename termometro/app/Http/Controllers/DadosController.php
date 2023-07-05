@@ -10,24 +10,23 @@ class DadosController extends Controller
 
     public function index(Request $request){
         if ($request->isMethod('POST')){
-
-            $ord = $request->ord == 'asc' ? 'asc' : 'desc';
+            $ord = $request->ord == 'desc' ? 'desc' : 'asc';
             $busca = $request->busca;
-            $busca2 = $request->busca2;
-            $dados = Dado::where('tempo', 'BETWEEN', "{$busca} AND {$busca2}")->orderBy('tempo', $ord)->paginate();
-            return view('Dados.index', [
-                'dados' => $dados,
-            ]);
+            if ($busca == ""){
+            $dados = Dado::orderBy('tempo', $ord)->paginate();
+            }else{
+            $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->paginate();
+            }
         } else {
         $dados = Dado::orderBy('tempo', 'desc')->paginate();
-
-        $graficoDia = Dado::orderBy('tempo', 'desc')->limit(7)->get();
-
-        $resposta = json_decode($graficoDia, true); // Converte a string JSON para um array associativo
-
-        $temperaturas = collect($resposta)->pluck('temperatura');
-        $umidade = collect($resposta)->pluck('umidade');
     }
+    $graficoDia = Dado::orderBy('tempo', 'desc')->limit(7)->get();
+
+    $resposta = json_decode($graficoDia, true); // Converte a string JSON para um array associativo
+
+    $temperaturas = collect($resposta)->pluck('temperatura');
+    $umidade = collect($resposta)->pluck('umidade');
+
         return view('pagina.index', [
             'dados' => $dados,
             'temp' => $temperaturas,

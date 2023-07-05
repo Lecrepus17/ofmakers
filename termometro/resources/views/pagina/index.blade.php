@@ -447,8 +447,8 @@
                         @csrf
                         <input type="date" name="busca" id="pesquisaData">
                         <select name="ord">
-                            <option value="asc">Crescente</option>
                             <option value="desc">Decrescente</option>
+                            <option value="asc">Crescente</option>
                         </select>
                         <input type="submit" placeholder="Pesquisar">
                     </form>
