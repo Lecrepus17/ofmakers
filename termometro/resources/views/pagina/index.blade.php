@@ -248,26 +248,26 @@
           switch (option) {
             case 'Maior':
               $('.temperature-value').text('{{$tempMaxToday}} °C');
-              if ({{$tempMaxToday}} >= 14) {
-                $('.card-icon bi').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
+              if ({{$tempMaxToday}} >= 13) {
+                $('.card-icon .bi').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
               } else {
-                $('.card-icon bi').removeClass('bi-thermometer-sun').addClass('bi-thermometer-snow');
+                $('.card-icon .bi').removeClass('bi-thermometer-sun').addClass('bi-thermometer-snow');
               }
               break;
             case 'Menor':
               $('.temperature-value').text('{{$tempMinToday}} °C');
-              if ({{$tempMinToday}} >= 14) {
-                $('.card-icon bi').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
+              if ({{$tempMinToday}} >= 13) {
+                $('.card-icon .bi').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
               } else {
-                $('.card-icon bi').removeClass('bi-thermometer-sun').addClass('bi-thermometer-snow');
+                $('.card-icon .bi').removeClass('bi-thermometer-sun').addClass('bi-thermometer-snow');
               };
               break;
             case 'Média':
               $('.temperature-value').text('{{$tempAvgToday}} °C');
-              if ({{$tempAvgToday}} >= 14) {
-                $('.card-icon bi').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
+              if ({{$tempAvgToday}} >= 13) {
+                $('.card-icon .bi').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
               } else {
-                $('.card-icon bi').removeClass('bi-thermometer-sun').addClass('bi-thermometer-snow');
+                $('.card-icon .bi').removeClass('bi-thermometer-sun').addClass('bi-thermometer-snow');
               }
               break;
           }
@@ -302,8 +302,8 @@
                   <h5 class="card-title"> Temperatura de Hoje <span>| <span id="filter-option">Maior</span></span></h5>
 
                   <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                        @if (5 > 10)
+                    <div class="card-icon  rounded-circle d-flex align-items-center justify-content-center">
+                        @if ( $tempMaxToday >= 13)
                         <i class="bi bi-thermometer-sun"></i>
                         @else
                         <i class="bi bi-thermometer-snow"></i>
