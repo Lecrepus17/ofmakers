@@ -13,9 +13,9 @@ class DadosController extends Controller
             $ord = $request->ord == 'desc' ? 'desc' : 'asc';
             $busca = $request->busca;
             if ($busca == ""){
-            $dados = Dado::orderBy('tempo', $ord)->paginate();
+            $dados = Dado::orderBy('tempo', $ord)->get();
             }else{
-            $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->paginate();
+            $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
             }
         } else {
         $dados = Dado::orderBy('tempo', 'desc')->paginate();
@@ -27,10 +27,23 @@ class DadosController extends Controller
     $temperaturas = collect($resposta)->pluck('temperatura');
     $umidade = collect($resposta)->pluck('umidade');
 
+    $tempMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('temperatura');
+    $tempMinToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->min('temperatura');
+    $tempAvgToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('temperatura');
+    $tempMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('temperatura');
+    $tempMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('temperatura');
+    $tempAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura');
+
         return view('pagina.index', [
             'dados' => $dados,
             'temp' => $temperaturas,
-            'umid' => $umidade
+            'umid' => $umidade,
+            'tempMaxToday' => $tempMaxToday,
+            'tempMinToday' => $tempMinToday,
+            'tempAvgToday' => $tempAvgToday,
+            'tempMaxMonth' => $tempMaxMonth,
+            'tempMinMonth' => $tempMinMonth,
+            'tempAvgMonth' => $tempAvgMonth,
         ]);}
     // mostra mais especifica de datas
     public function view(Dado $dado){

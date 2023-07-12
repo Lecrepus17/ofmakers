@@ -17,9 +17,9 @@ class DadoFactory extends Factory
     public function definition(): array
     {
         return [
-            'temperatura' => $this->faker->randomFloat(1, 1, 50),
+            'temperatura' => $this->faker->randomFloat(1, -10, 30),
             'umidade' => $this->faker->numberBetween( 1, 100),
-            'tempo' => $this->faker->dateTime,
+            'tempo' => $this->faker->dateTimeBetween('-32 days', 'now'),
         ];
     }
 }
