@@ -13,7 +13,7 @@ class DadosController extends Controller
             $ord = $request->ord == 'desc' ? 'desc' : 'asc';
             $busca = $request->busca;
             if ($busca == ""){
-            $dados = Dado::orderBy('tempo', $ord)->get();
+            $dados = Dado::orderBy('tempo', $ord)->paginate();
             }else{
             $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
             }
@@ -28,11 +28,24 @@ class DadosController extends Controller
     $umidade = collect($resposta)->pluck('umidade');
 
     $tempMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('temperatura');
+    $umidMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('umidade');
+
     $tempMinToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->min('temperatura');
+    $umidMinToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->min('umidade');
+
     $tempAvgToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('temperatura');
+    $umidAvgToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('umidade');
+
     $tempMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('temperatura');
+    $umidMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('umidade');
+
     $tempMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('temperatura');
+    $umidMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('umidade');
+
     $tempAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura');
+    $umidAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('umidade');
+
+    $tempCurrent = Dado::orderBy('tempo', 'desc')->limit(1)->get();
 
         return view('pagina.index', [
             'dados' => $dados,
@@ -44,6 +57,13 @@ class DadosController extends Controller
             'tempMaxMonth' => $tempMaxMonth,
             'tempMinMonth' => $tempMinMonth,
             'tempAvgMonth' => $tempAvgMonth,
+            'umidMaxToday' => $umidMaxToday,
+            'umidMinToday' => $umidMinToday,
+            'umidAvgToday' => $umidAvgToday,
+            'umidMaxMonth' => $umidMaxMonth,
+            'umidMinMonth' => $umidMinMonth,
+            'umidAvgMonth' => $umidAvgMonth,
+            'tempCurrent' => $tempCurrent,
         ]);}
     // mostra mais especifica de datas
     public function view(Dado $dado){
