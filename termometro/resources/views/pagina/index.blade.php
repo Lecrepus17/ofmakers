@@ -247,12 +247,19 @@
           switch (option) {
             case 'Maior':
               $('.temperature-value').text('25 °C');
+              $('.card-icon i').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
               break;
             case 'Menor':
               $('.temperature-value').text('10 °C');
+              $('.card-icon i').removeClass('bi-thermometer-sun').addClass('bi-thermometer-snow');
               break;
             case 'Média':
               $('.temperature-value').text('18 °C');
+              if (5 > 10) {
+                $('.card-icon i').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
+              } else {
+                $('.card-icon i').removeClass('bi-thermometer-sun').addClass('bi-thermometer-snow');
+              }
               break;
           }
         });
@@ -276,7 +283,7 @@
                       <h6>Filter</h6>
                     </li>
 
-                    <li><a class="dropdown-item" href="#">Maior</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="changeTemperatureIcon('Maior')">Maior</a></li>
                     <li><a class="dropdown-item" href="#">Menor</a></li>
                     <li><a class="dropdown-item" href="#">Média</a></li>
                   </ul>
