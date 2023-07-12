@@ -242,17 +242,33 @@
 
           var option = $(this).text();
           $('#filter-option').text(option);
+          $('.card-icon .temperature-icon').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
 
           // Atualizar os valores com base na opção selecionada
           switch (option) {
             case 'Maior':
-              $('.temperature-value').text('25 °C');
+              $('.temperature-value').text('{{$tempMaxToday}} °C');
+              if ({{$tempMaxToday}} >= 14) {
+                $('.card-icon bi').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
+              } else {
+                $('.card-icon bi').removeClass('bi-thermometer-sun').addClass('bi-thermometer-snow');
+              }
               break;
             case 'Menor':
-              $('.temperature-value').text('10 °C');
+              $('.temperature-value').text('{{$tempMinToday}} °C');
+              if ({{$tempMinToday}} >= 14) {
+                $('.card-icon bi').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
+              } else {
+                $('.card-icon bi').removeClass('bi-thermometer-sun').addClass('bi-thermometer-snow');
+              };
               break;
             case 'Média':
-              $('.temperature-value').text('18 °C');
+              $('.temperature-value').text('{{$tempAvgToday}} °C');
+              if ({{$tempAvgToday}} >= 14) {
+                $('.card-icon bi').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
+              } else {
+                $('.card-icon bi').removeClass('bi-thermometer-sun').addClass('bi-thermometer-snow');
+              }
               break;
           }
         });
@@ -295,7 +311,7 @@
 
                     </div>
                     <div class="ps-3">
-                      <h6 class="temperature-value">15 °C</h6>
+                      <h6 class="temperature-value">{{$tempMaxToday}} °C</h6>
                       <span class="text-success small pt-1 fw-bold">16%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
 
                     </div>
@@ -327,8 +343,9 @@
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-calendar"></i>
-                    </div>
+                        <i class="bi bi-calendar"></i>
+                      </div>
+
                     <div class="ps-3">
                       <h6>23 °C</h6>
                       <span class="text-success small pt-1 fw-bold">17%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
