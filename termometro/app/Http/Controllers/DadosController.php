@@ -22,6 +22,9 @@ class DadosController extends Controller
     }
     $graficoDia = Dado::orderBy('tempo', 'desc')->limit(7)->get();
 
+    $temperaturaAtual = Dado::orderBy('tempo', 'desc')->limit(1)->get();
+
+
     $resposta = json_decode($graficoDia, true); // Converte a string JSON para um array associativo
 
     $temperaturas = collect($resposta)->pluck('temperatura');
@@ -49,6 +52,7 @@ class DadosController extends Controller
 
         return view('pagina.index', [
             'dados' => $dados,
+            'temperaturaAtual' => $temperaturaAtual,
             'temp' => $temperaturas,
             'umid' => $umidade,
             'tempMaxToday' => $tempMaxToday,
