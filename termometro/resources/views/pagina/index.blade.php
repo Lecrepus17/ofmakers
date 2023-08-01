@@ -383,84 +383,166 @@
 
             </div><!-- End Customers Card -->
 
-            <!-- Reports -->
-            <div class="col-12">
-              <div class="card">
+<!-- Reports - Gráfico 1 -->
+<div class="col-12">
+    <div class="card">
 
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
+      <!-- ... (código para o filtro) ... -->
 
-                    <li><a class="dropdown-item" href="#">Hoje</a></li>
-                    <li><a class="dropdown-item" href="#">Esse mês</a></li>
-                    <li><a class="dropdown-item" href="#">Esse ano</a></li>
-                  </ul>
-                </div>
+      <div class="card-body">
+        <h5 class="card-title">Gráfico<span>/Hoje</span></h5>
 
-                <div class="card-body">
-                  <h5 class="card-title">Gráfico <span>/Hoje</span></h5>
+        <!-- Line Chart 1 -->
+        <div id="reportsChart1"></div>
 
-                  <!-- Line Chart -->
-                  <div id="reportsChart"></div>
+        <script>
 
-                  <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                      new ApexCharts(document.querySelector("#reportsChart"), {
-                        series: [{
-                          name: 'Temperatura',
-                          data: {{$temp}},
-                        }, {
-                          name: 'Umidade',
-                          data: {{ $umid}}
-                        }],
-                        chart: {
-                          height: 350,
-                          type: 'area',
-                          toolbar: {
-                            show: false
-                          },
-                        },
-                        markers: {
-                          size: 4
-                        },
-                        colors: ['#4154f1', '#2eca6a', '#ff771d'],
-                        fill: {
-                          type: "gradient",
-                          gradient: {
-                            shadeIntensity: 1,
-                            opacityFrom: 0.3,
-                            opacityTo: 0.4,
-                            stops: [0, 90, 100]
-                          }
-                        },
-                        dataLabels: {
-                          enabled: false
-                        },
-                        stroke: {
-                          curve: 'smooth',
-                          width: 2
-                        },
-                        xaxis: {
-                          type: 'datetime',
-                          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-                        },
-                        tooltip: {
-                          x: {
-                            format: 'dd/MM/yy HH:mm'
-                          },
-                        }
-                      }).render();
-                    });
-                  </script>
-                  <!-- End Line Chart -->
+            // Variável PHP com os dados de tempo
+            var tempo = {!! json_encode($today) !!};
+            // Função para formatar o tempo no formato desejado
+            function formatarTempoParaXAxis(tempo) {
+                return tempo.map(function(element) {
+                return new Date(element).toISOString();
+                });
+            }
+            // Agora, formatamos a variável tempo para o formato desejado
+            var tempoFormatado = formatarTempoParaXAxis(tempo);
 
-                </div>
+          document.addEventListener("DOMContentLoaded", () => {
+            new ApexCharts(document.querySelector("#reportsChart1"), {
+              series: [{
+                name: 'Temperatura',
+                data: {{$tempToday}}
+              }, {
+                name: 'Umidade',
+                data: {{$umidToday}}
+              }],
+              chart: {
+                height: 350,
+                type: 'area',
+                toolbar: {
+                  show: false
+                },
+              },
+              markers: {
+                size: 4
+              },
+              colors: ['#4154f1', '#2eca6a', '#ff771d'],
+              fill: {
+                type: "gradient",
+                gradient: {
+                  shadeIntensity: 1,
+                  opacityFrom: 0.3,
+                  opacityTo: 0.4,
+                  stops: [0, 90, 100]
+                }
+              },
+              dataLabels: {
+                enabled: false
+              },
+              stroke: {
+                curve: 'smooth',
+                width: 2
+              },
+              xaxis: {
+                type: 'datetime',
+                categories: tempoFormatado
+              },
+              tooltip: {
+                x: {
+                  format: 'dd/MM/yy HH:mm'
+                },
+              }
+            }).render();
+          });
+        </script>
+        <!-- End Line Chart 1 -->
 
-              </div>
-            </div><!-- End Reports -->
+      </div>
+
+    </div>
+  </div><!-- End Reports - Gráfico 1 -->
+
+  <!-- Reports - Gráfico 2 -->
+  <div class="col-12">
+    <div class="card">
+
+      <!-- ... (código para o filtro) ... -->
+
+      <div class="card-body">
+        <h5 class="card-title">Gráfico<span>/Mês</span></h5>
+
+        <!-- Line Chart 2 -->
+        <div id="reportsChart2"></div>
+
+        <script>
+
+            // Variável PHP com os dados de tempo
+            var tempo = {!! json_encode($month) !!};
+            // Função para formatar o tempo no formato desejado
+            function formatarTempoParaXAxis(tempo) {
+                return tempo.map(function(element) {
+                return new Date(element).toISOString();
+                });
+            }
+            // Agora, formatamos a variável tempo para o formato desejado
+            var tempoFormatado2 = formatarTempoParaXAxis(tempo);
+
+          document.addEventListener("DOMContentLoaded", () => {
+            new ApexCharts(document.querySelector("#reportsChart1"), {
+              series: [{
+                name: 'Temperatura',
+                data: {{$tempMonth}}
+              }, {
+                name: 'Umidade',
+                data: {{$umidMonth}}
+              }],
+              chart: {
+                height: 350,
+                type: 'area',
+                toolbar: {
+                  show: false
+                },
+              },
+              markers: {
+                size: 4
+              },
+              colors: ['#4154f1', '#2eca6a', '#ff771d'],
+              fill: {
+                type: "gradient",
+                gradient: {
+                  shadeIntensity: 1,
+                  opacityFrom: 0.3,
+                  opacityTo: 0.4,
+                  stops: [0, 90, 100]
+                }
+              },
+              dataLabels: {
+                enabled: false
+              },
+              stroke: {
+                curve: 'smooth',
+                width: 2
+              },
+              xaxis: {
+                type: 'datetime',
+                categories: tempoFormatado2
+              },
+              tooltip: {
+                x: {
+                  format: 'dd/MM/yy HH:mm'
+                },
+              }
+            }).render();
+          });
+        </script>
+        <!-- End Line Chart 2 -->
+
+      </div>
+
+    </div>
+  </div><!-- End Reports - Gráfico 2 -->
+
 
             <!-- Recent Sales -->
             <div class="col-12">
