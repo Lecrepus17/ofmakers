@@ -22,12 +22,16 @@ class DadosController extends Controller
         $dados = Dado::orderBy('tempo', 'desc')->paginate();
     }
 
+
     // Obter a data atual
     $dataAtual = Carbon::now()->format('Y-m-d');
     // Fazer a consulta usando whereDate para obter os dados do dia atual
     $graficoDia = Dado::whereDate('tempo', '=', $dataAtual)->get();
     // Converter o resultado para um array associativo
     $resposta = json_decode($graficoDia, true);
+
+    $temperaturaAtual = Dado::orderBy('tempo', 'desc')->limit(1)->get();
+
 
 
         // Obter a data de 15 dias atrás a partir de hoje
@@ -79,6 +83,7 @@ class DadosController extends Controller
             'tempMonth' => $temperaturasMonth,
             'umidMonth' => $umidadeMonth,
             'month' => $tempoMonth,
+            'temperaturaAtual' => $temperaturaAtual,
             'tempMaxToday' => $tempMaxToday,
             'tempMinToday' => $tempMinToday,
             'tempAvgToday' => $tempAvgToday,
