@@ -14,7 +14,7 @@ use App\Http\Controllers\DadosController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pagina.charts-apexcharts');
 });
 
 Route::get('/index', [DadosController::class, 'index'])->name('index');

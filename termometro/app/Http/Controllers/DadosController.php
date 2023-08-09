@@ -25,36 +25,37 @@ class DadosController extends Controller
 
     // Obter a data atual
     $dataAtual = Carbon::now()->format('Y-m-d');
+
     // Fazer a consulta usando whereDate para obter os dados do dia atual
     $graficoDia = Dado::whereDate('tempo', '=', $dataAtual)->get();
+
     // Converter o resultado para um array associativo
     $resposta = json_decode($graficoDia, true);
 
     $temperaturaAtual = Dado::orderBy('tempo', 'desc')->limit(1)->get();
 
+    // Obter a data de 15 dias atrás a partir de hoje
+    $dataLimiteInferior = Carbon::now()->subDays(15)->format('Y-m-d');
 
-
-        // Obter a data de 15 dias atrás a partir de hoje
-        $dataLimiteInferior = Carbon::now()->subDays(15)->format('Y-m-d');
-
-        // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
-        $dadosUltimos15Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
-                                ->selectRaw('DATE(tempo) as tempo, AVG(temperatura) temperatura, AVG(umidade) as umidade')
-                                ->groupBy('tempo')
-                                ->get();
-
-    // Não é necessário usar json_decode ou toArray() novamente, pois $graficoMes já é uma coleção do Laravel
-    $resposta2 = json_decode($dadosUltimos15Dias, true);
-
+    // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
+    $dadosUltimos15Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
+                            ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
+                            ->groupBy('data')
+                            ->get();
 
     $temperaturasToday = collect($resposta)->pluck('temperatura');
     $umidadeToday = collect($resposta)->pluck('umidade');
     $tempoToday = collect($resposta)->pluck('tempo');
 
-    $temperaturasMonth = collect($resposta2)->pluck('temperatura');
-    $umidadeMonth = collect($resposta2)->pluck('umidade');
-    $tempoMonth = collect($resposta2)->pluck('tempo');
-    dd($resposta2);
+    $temperaturasMonth = collect($dadosUltimos15Dias)->pluck('temperatura_media')->map(function ($value) {
+        return number_format($value, 1);
+    });
+
+    $umidadeMonth = collect($dadosUltimos15Dias)->pluck('umidade_media')->map(function ($value) {
+        return number_format($value, 1);
+    });
+    $tempoMonth = collect($dadosUltimos15Dias)->pluck('data');
+
     $tempMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('temperatura');
     $umidMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('umidade');
 

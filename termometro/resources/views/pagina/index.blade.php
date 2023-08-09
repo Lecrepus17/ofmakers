@@ -417,11 +417,10 @@ $(document).ready(function() {
 
         <!-- Line Chart 1 -->
         <div id="reportsChart1"></div>
-
         <script>
 
             // Variável PHP com os dados de tempo
-            var tempo = {!! json_encode($today) !!};
+            var tempoToday = {!! json_encode($today) !!};
             // Função para formatar o tempo no formato desejado
             function formatarTempoParaXAxis(tempo) {
                 return tempo.map(function(element) {
@@ -429,16 +428,16 @@ $(document).ready(function() {
                 });
             }
             // Agora, formatamos a variável tempo para o formato desejado
-            var tempoFormatado = formatarTempoParaXAxis(tempo);
+            var tempoFormatado = formatarTempoParaXAxis(tempoToday);
 
           document.addEventListener("DOMContentLoaded", () => {
             new ApexCharts(document.querySelector("#reportsChart1"), {
               series: [{
                 name: 'Temperatura',
-                data: {{$tempToday}}
+                data: {!! json_encode($tempToday) !!}
               }, {
                 name: 'Umidade',
-                data: {{$umidToday}}
+                data: {!! json_encode($umidToday) !!}
               }],
               chart: {
                 height: 350,
@@ -486,66 +485,51 @@ $(document).ready(function() {
     </div>
   </div><!-- End Reports - Gráfico 1 -->
 
-  <!-- Reports - Gráfico 2 -->
-  <div class="col-12">
+  <div class="col-lg-12">
     <div class="card">
-
-      <!-- ... (código para o filtro) ... -->
-
       <div class="card-body">
-        <h5 class="card-title">Gráfico<span>/Mês</span></h5>
+        <h5 class="card-title">Line Chart</h5>
 
-        <!-- Line Chart 2 -->
-        <div id="reportsChart2"></div>
+        <!-- Line Chart -->
+        <div id="lineChart"></div>
 
         <script>
 
             // Variável PHP com os dados de tempo
-            var tempo = {!! json_encode($month) !!};
+            var tempoMonth = {!! json_encode($month) !!};
             // Função para formatar o tempo no formato desejado
-            function formatarTempoParaXAxis(tempo) {
+            function formatarTempoParaXAxis2(tempo) {
                 return tempo.map(function(element) {
                 return new Date(element).toISOString();
                 });
             }
             // Agora, formatamos a variável tempo para o formato desejado
-            var tempoFormatado2 = formatarTempoParaXAxis(tempo);
+            var tempoFormatado2 = formatarTempoParaXAxis2(tempoMonth);
 
           document.addEventListener("DOMContentLoaded", () => {
-            new ApexCharts(document.querySelector("#reportsChart1"), {
+            new ApexCharts(document.querySelector("#lineChart"), {
               series: [{
-                name: 'Temperatura',
-                data: {{$tempMonth}}
-              }, {
-                name: 'Umidade',
-                data: {{$umidMonth}}
+                name: "temperaturas",
+                data: {!! json_encode($tempMonth) !!}
               }],
               chart: {
                 height: 350,
-                type: 'area',
-                toolbar: {
-                  show: false
-                },
-              },
-              markers: {
-                size: 4
-              },
-              colors: ['#4154f1', '#2eca6a', '#ff771d'],
-              fill: {
-                type: "gradient",
-                gradient: {
-                  shadeIntensity: 1,
-                  opacityFrom: 0.3,
-                  opacityTo: 0.4,
-                  stops: [0, 90, 100]
+                type: 'line',
+                zoom: {
+                  enabled: false
                 }
               },
               dataLabels: {
                 enabled: false
               },
               stroke: {
-                curve: 'smooth',
-                width: 2
+                curve: 'straight'
+              },
+              grid: {
+                row: {
+                  colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+                  opacity: 0.5
+                },
               },
               xaxis: {
                 type: 'datetime',
@@ -559,12 +543,14 @@ $(document).ready(function() {
             }).render();
           });
         </script>
-        <!-- End Line Chart 2 -->
+        <!-- End Line Chart -->
 
       </div>
-
     </div>
-  </div><!-- End Reports - Gráfico 2 -->
+  </div>
+
+
+
 
 
             <!-- Recent Sales -->
@@ -599,11 +585,11 @@ $(document).ready(function() {
                     <tbody>
                         @foreach ( $dados  as $dado)
                         <tr>
-                            <th scope="row"><a href="#">#1</a></th>
+                            <th scope="row"><a href="#">{{ $dado->id }}</a></th>
                             <td>{{ $dado->temperatura }} ºC</td>
                             <td>{{ $dado->umidade }}%</td>
                             <td>{{ $dado->tempo }}</td>
-                            <td><span class="badge bg-danger">Apagar</span></td>
+                            <td><a href="delete"><span class="badge bg-danger">Apagar</span></a></td>
                           </tr>
                         @endforeach
                     </tbody>
