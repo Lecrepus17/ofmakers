@@ -241,14 +241,14 @@ $(document).ready(function() {
   $('.dropdown-item').click(function(e) {
     e.preventDefault();
 
+
     var option = $(this).data('target');
     $('#filter-option').text(option);
 
-    var option2 = $(this).data('target2');
-    $('#filter-option2').text(option2);
-
     // Remover a classe do ícone anterior associado ao item de menu selecionado
     $('#temperature-icon').removeClass('bi-thermometer-sun').addClass('bi-thermometer-snow');
+
+
 
     // Atualizar os valores com base na opção selecionada
     switch (option) {
@@ -261,7 +261,7 @@ $(document).ready(function() {
         }
         break;
       case 'media':
-        // Atualizar valores para o caso "Menor"
+        // Atualizar valores para o caso "media"
         $('#temperature-value').text('{{$tempAvgToday}} °C');
         if ({{$tempAvgToday}} >= 13) {
           $('#temperature-icon').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
@@ -270,7 +270,7 @@ $(document).ready(function() {
         }
         break;
       case 'menor':
-        // Atualizar valores para o caso "Média"
+        // Atualizar valores para o caso "menor"
         $('#temperature-value').text('{{$tempMinToday}} °C');
         if ({{$tempMinToday}} >= 13) {
           $('#temperature-icon').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
@@ -280,16 +280,21 @@ $(document).ready(function() {
         break;
     }
 
+
+
+    var option2 = $(this).data('target2');
+    $('#filtroOp2').text(option2);
+
     switch (option2) {
-      case 'maiorMes':
+      case 'maior':
         $('#tempMonth').text('{{$tempMaxMonth}} °C');
       break;
 
-      case 'menorMes':
+      case 'menor':
         $('#tempMonth').text('{{$tempMinMonth}} °C');
       break;
 
-      case 'mediaMes':
+      case 'media':
         $('#tempMonth').text('{{$tempAvgMonth}} °C');
 
     }
@@ -326,11 +331,8 @@ $(document).ready(function() {
 
                     <div class="d-flex align-items-center">
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                        @if ($tempMaxToday >= 13)
                           <i id="temperature-icon" class="bi bi-thermometer-sun"></i>
-                        @else
-                          <i id="temperature-icon" class="bi bi-thermometer-snow"></i>
-                        @endif
+
                       </div>
                       <div class="ps-3">
                         <h6 id="temperature-value" class="temperature-value">{{$tempMaxToday}} °C</h6>
@@ -355,14 +357,14 @@ $(document).ready(function() {
                       <h6>Filter</h6>
                     </li>
 
-                    <li><a class="dropdown-item" href="#" data-target="maiorMes">Maior</a></li>
-                      <li><a class="dropdown-item" href="#" data-target="menorMes">Menor</a></li>
-                      <li><a class="dropdown-item" href="#" data-target="mediaMes">Média</a></li>
+                    <li><a class="dropdown-item" href="#" data-target2="maior">Maior</a></li>
+                      <li><a class="dropdown-item" href="#" data-target2="menor">Menor</a></li>
+                      <li><a class="dropdown-item" href="#" data-target2="media">Média</a></li>
                   </ul>
                 </div>
 
                 <div class="card-body">
-                    <h5 class="card-title">Temperatura do Mês <span>| <span id="filter-option2">Maior</span></span></h5>
+                    <h5 class="card-title">Temperatura do Mês <span>| <span id="filtroOp2">Maior</span></span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -370,7 +372,7 @@ $(document).ready(function() {
                       </div>
 
                     <div class="ps-3">
-                      <h6 id="tempMonth" class="temperature-value">{{$tempMaxMonth}} °C</h6>
+                      <h6 id="tempMonth" class="tempMonth">{{$tempMaxMonth}} °C</h6>
                       <span class="text-success small pt-1 fw-bold">17%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
 
                     </div>
@@ -395,7 +397,7 @@ $(document).ready(function() {
                       <i class="bi bi-thermometer-sun"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>20 °C</h6>
+                      <h6>{!! json_encode($temperaturaNow) !!}°C</h6>
                       <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
 
                     </div>

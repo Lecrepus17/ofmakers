@@ -34,8 +34,12 @@ class DadosController extends Controller
 
     $temperaturaAtual = Dado::orderBy('tempo', 'desc')->limit(1)->get();
 
+
     // Obter a data de 15 dias atrás a partir de hoje
     $dataLimiteInferior = Carbon::now()->subDays(15)->format('Y-m-d');
+
+    $temperaturaNow =  collect($temperaturaAtual)->pluck('temperatura');
+
 
     // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
     $dadosUltimos15Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
@@ -47,6 +51,7 @@ class DadosController extends Controller
     $umidadeToday = collect($resposta)->pluck('umidade');
     $tempoToday = collect($resposta)->pluck('tempo');
 
+
     $temperaturasMonth = collect($dadosUltimos15Dias)->pluck('temperatura_media')->map(function ($value) {
         return number_format($value, 1);
     });
@@ -55,6 +60,7 @@ class DadosController extends Controller
         return number_format($value, 1);
     });
     $tempoMonth = collect($dadosUltimos15Dias)->pluck('data');
+
 
     $tempMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('temperatura');
     $umidMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('umidade');
@@ -74,8 +80,6 @@ class DadosController extends Controller
     $tempAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura');
     $umidAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('umidade');
 
-    $tempCurrent = Dado::orderBy('tempo', 'desc')->limit(1)->get();
-
         return view('pagina.index', [
             'dados' => $dados,
             'tempToday' => $temperaturasToday,
@@ -84,7 +88,7 @@ class DadosController extends Controller
             'tempMonth' => $temperaturasMonth,
             'umidMonth' => $umidadeMonth,
             'month' => $tempoMonth,
-            'temperaturaAtual' => $temperaturaAtual,
+            'temperaturaNow' => $temperaturaNow,
             'tempMaxToday' => $tempMaxToday,
             'tempMinToday' => $tempMinToday,
             'tempAvgToday' => $tempAvgToday,
@@ -97,7 +101,6 @@ class DadosController extends Controller
             'umidMaxMonth' => $umidMaxMonth,
             'umidMinMonth' => $umidMinMonth,
             'umidAvgMonth' => $umidAvgMonth,
-            'tempCurrent' => $tempCurrent,
         ]);}
     // mostra mais especifica de datas
     public function view(Dado $dado){
