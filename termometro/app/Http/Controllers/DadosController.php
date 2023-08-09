@@ -31,7 +31,7 @@ class DadosController extends Controller
     $resposta = json_decode($graficoDia, true);
 
     $temperaturaAtual = Dado::orderBy('tempo', 'desc')->limit(1)->get();
-
+    $temperaturaNow =  collect($temperaturaAtual)->pluck('temperatura');
 
 
         // Obter a data de 15 dias atrás a partir de hoje
@@ -54,7 +54,7 @@ class DadosController extends Controller
     $temperaturasMonth = collect($resposta2)->pluck('temperatura');
     $umidadeMonth = collect($resposta2)->pluck('umidade');
     $tempoMonth = collect($resposta2)->pluck('tempo');
-    dd($resposta2);
+    //dd($resposta2);
     $tempMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('temperatura');
     $umidMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('umidade');
 
@@ -73,8 +73,6 @@ class DadosController extends Controller
     $tempAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura');
     $umidAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('umidade');
 
-    $tempCurrent = Dado::orderBy('tempo', 'desc')->limit(1)->get();
-
         return view('pagina.index', [
             'dados' => $dados,
             'tempToday' => $temperaturasToday,
@@ -83,7 +81,7 @@ class DadosController extends Controller
             'tempMonth' => $temperaturasMonth,
             'umidMonth' => $umidadeMonth,
             'month' => $tempoMonth,
-            'temperaturaAtual' => $temperaturaAtual,
+            'temperaturaNow' => $temperaturaNow,
             'tempMaxToday' => $tempMaxToday,
             'tempMinToday' => $tempMinToday,
             'tempAvgToday' => $tempAvgToday,
@@ -96,7 +94,6 @@ class DadosController extends Controller
             'umidMaxMonth' => $umidMaxMonth,
             'umidMinMonth' => $umidMinMonth,
             'umidAvgMonth' => $umidAvgMonth,
-            'tempCurrent' => $tempCurrent,
         ]);}
     // mostra mais especifica de datas
     public function view(Dado $dado){
