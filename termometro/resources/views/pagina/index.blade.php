@@ -588,16 +588,22 @@ $(document).ready(function() {
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ( $dados  as $dado)
-                        <tr>
-                            <th scope="row"><a href="#">{{ $dado->id }}</a></th>
-                            <td>{{ $dado->temperatura }} ºC</td>
-                            <td>{{ $dado->umidade }}%</td>
-                            <td>{{ $dado->tempo }}</td>
-                            <td><a href="delete"><span class="badge bg-danger">Apagar</span></a></td>
-                          </tr>
+                        @foreach ($dados as $dado)
+                            <tr>
+                                <th scope="row"><a href="#">{{ $dado->id }}</a></th>
+                                <td>{{ $dado->temperatura }} ºC</td>
+                                <td>{{ $dado->umidade }}%</td>
+                                <td>{{ $dado->tempo }}</td>
+                                <td>
+                                    <a href="{{ route('delete', ['dado' => $dado->id]) }}" class="delete-button" id="deleteButton{{$dado->id}}">
+                                        <span class="badge bg-danger">Apagar</span>
+                                    </a>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
+
+
                   </table>
 
                 </div>
@@ -614,6 +620,45 @@ $(document).ready(function() {
 
       </div>
     </section>
+
+<!-- Script para lidar com a janela de confirmação -->
+<!-- Inclua as bibliotecas necessárias -->
+<script src="{{ asset('assets/js/sweetalert.all.js') }}"></script>
+<!-- Seus scripts -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Coloque suas interações do SweetAlert aqui
+        const deleteButtons = document.querySelectorAll(".delete-button");
+
+        deleteButtons.forEach(button => {
+            button.addEventListener("click", function(event) {
+                event.preventDefault();
+
+                Swal.fire({
+                    title: "Você tem certeza?",
+                    text: "Esta ação não pode ser desfeita!",
+                    icon: "warning",
+                    showCancelButton: true, // Mostrar o botão "Cancelar"
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Confirmar",
+                    cancelButtonText: "Cancelar",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = this.getAttribute('href');
+                    } else {
+                        Swal.fire("Operação cancelada!", "", "info");
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+Ao adicionar showCancelButton: true na configuração do Swal.fire, você estará instruindo o SweetAlert a mostrar o botão "Cancelar". Além disso, ajustamos as cores dos botões de confirmação e cancelamento usando confirmButtonColor e cancelButtonColor, respectivamente, e definimos os textos dos botões com confirmButtonText e cancelButtonText.
+
+Essa configuração permitirá que o usuário escolha entre "Cancelar" e "Confirmar". Se o usuário clicar em "Confirmar", a ação será executada, caso contrário, a mensagem "Operação cancelada!" será exibida.
+
 
   </main><!-- End #main -->
 
