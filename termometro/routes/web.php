@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 Route::get('/index', [DadosController::class, 'index'])->name('index');
 Route::post('/index', [DadosController::class, 'index']);
+Route::get('/delete/{dado}', [DadosController::class, 'delete'])->name('delete');

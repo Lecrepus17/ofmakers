@@ -2,6 +2,8 @@
 sudo /opt/lampp/xampp start apache  
 sudo apt-get install php-mysql
 
+botão delete composer require realrashid/sweet-alert
+
 php.ini 
 alterações
 curl -sS https://getcomposer.org/installer | php

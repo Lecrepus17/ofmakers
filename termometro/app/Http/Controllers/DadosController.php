@@ -108,16 +108,11 @@ class DadosController extends Controller
             'dado' => $dado
         ]);
     }
-    // caso necessite deletar
-    public function delete(Dado $Dado){
-        return view('Dados.delete', [
-            'prod' => $Dado,
-        ]);
-    }
+
     // caso realmente precise deletar
-    public function deletefORrEAL(Dado $Dado){
-        $Dado->delete();
-        return redirect()->route('Dados')->with('sucesso', 'Dado deletado com sucesso!');
+    public function delete(Dado $dado){
+        $dado->delete();
+        return redirect()->route('index')->with('sucesso', 'Dado deletado com sucesso!');
     }
 }
 
