@@ -32,13 +32,13 @@ class DadosController extends Controller
     // Converter o resultado para um array associativo
     $resposta = json_decode($graficoDia, true);
 
-    $temperaturaAtual = Dado::orderBy('tempo', 'desc')->limit(1)->get();
+    $temperaturaAtual = Dado::orderBy('tempo', 'desc')->limit(1)->first();
 
 
     // Obter a data de 15 dias atrás a partir de hoje
     $dataLimiteInferior = Carbon::now()->subDays(15)->format('Y-m-d');
 
-    $temperaturaNow =  collect($temperaturaAtual)->pluck('temperatura');
+    $temperaturaNow =  $temperaturaAtual->temperatura;
 
 
     // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias

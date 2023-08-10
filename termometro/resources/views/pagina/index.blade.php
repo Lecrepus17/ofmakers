@@ -279,8 +279,12 @@ $(document).ready(function() {
         }
         break;
     }
+  });
 
 
+
+    $('.dropdown-item-month').click(function(e) {
+    e.preventDefault();
 
     var option2 = $(this).data('target2');
     $('#filtroOp2').text(option2);
@@ -288,17 +292,16 @@ $(document).ready(function() {
     switch (option2) {
       case 'maior':
         $('#tempMonth').text('{{$tempMaxMonth}} °C');
-      break;
-
+        break;
       case 'menor':
         $('#tempMonth').text('{{$tempMinMonth}} °C');
-      break;
-
+        break;
       case 'media':
         $('#tempMonth').text('{{$tempAvgMonth}} °C');
-
+        break;
     }
   });
+
 });
 
     </script>
@@ -357,9 +360,9 @@ $(document).ready(function() {
                       <h6>Filter</h6>
                     </li>
 
-                    <li><a class="dropdown-item" href="#" data-target2="maior">Maior</a></li>
-                      <li><a class="dropdown-item" href="#" data-target2="menor">Menor</a></li>
-                      <li><a class="dropdown-item" href="#" data-target2="media">Média</a></li>
+                    <li><a class="dropdown-item-month" href="#" data-target2="maior">Maior</a></li>
+                      <li><a class="dropdown-item-month" href="#" data-target2="menor">Menor</a></li>
+                      <li><a class="dropdown-item-month" href="#" data-target2="media">Média</a></li>
                   </ul>
                 </div>
 
@@ -397,7 +400,7 @@ $(document).ready(function() {
                       <i class="bi bi-thermometer-sun"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>{!! json_encode($temperaturaNow) !!}°C</h6>
+                      <h6>{{$temperaturaNow}}°C</h6>
                       <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
 
                     </div>

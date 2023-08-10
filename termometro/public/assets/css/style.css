@@ -151,6 +151,23 @@ h6 {
   background-color: #f6f9ff;
 }
 
+.dropdown-menu .dropdown-item-month {
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: 0.3s;
+  }
+
+  .dropdown-menu .dropdown-item-month i {
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 0;
+  }
+
+  .dropdown-menu .dropdown-item-month:hover {
+    background-color: #f6f9ff;
+  }
+
+
 @media (min-width: 768px) {
   .dropdown-menu-arrow::before {
     content: "";
@@ -594,6 +611,22 @@ h6 {
   background-color: #f6f9ff;
 }
 
+.header-nav .profile .dropdown-item-month {
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: 0.3s;
+  }
+
+  .header-nav .profile .dropdown-item-month i {
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 0;
+  }
+
+  .header-nav .profile .dropdown-item-month:hover {
+    background-color: #f6f9ff;
+  }
+
 /*--------------------------------------------------------------
 # Sidebar
 --------------------------------------------------------------*/
@@ -797,6 +830,11 @@ h6 {
 .dashboard .filter .dropdown-item {
   padding: 8px 15px;
 }
+
+.dashboard .filter .dropdown-item-month {
+    padding: 8px 15px;
+  }
+
 
 /* Info Cards */
 .dashboard .info-card {
