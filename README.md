@@ -1,6 +1,10 @@
 # ofmakers
 sudo /opt/lampp/xampp start apache  
- php artisan vendor:publish --tag=laravel-pagination
+
+php artisan vendor:publish --tag=laravel-pagination
+
+composer require realrashid/sweet-alert
+
 php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider"
 
 sudo apt-get install php-mysql
