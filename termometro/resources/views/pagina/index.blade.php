@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <title>Estação meteorológica</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -230,7 +230,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active">temperatura</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -418,7 +418,7 @@ $(document).ready(function() {
       <!-- ... (código para o filtro) ... -->
 
       <div class="card-body">
-        <h5 class="card-title">Gráfico<span>/Hoje</span></h5>
+        <h5 class="card-title">Gráfico<span> / Hoje</span></h5>
 
         <!-- Line Chart 1 -->
         <div id="reportsChart1"></div>
@@ -493,7 +493,7 @@ $(document).ready(function() {
   <div class="col-lg-12">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Line Chart</h5>
+        <h5 class="card-title">Gráfico<span> / Mês</span></h5>
 
         <!-- Line Chart -->
         <div id="lineChart"></div>
@@ -568,6 +568,7 @@ $(document).ready(function() {
 
                 <div class="card-body">
                   <h5 class="card-title">Temperatura recente <span>| Hoje</span></h5>
+                  <div class="form-container">
                     <form method="POST" action="{{ route('index') }}">
                         @csrf
                         <input type="date" name="busca" id="pesquisaData">
@@ -575,8 +576,15 @@ $(document).ready(function() {
                             <option value="desc">Decrescente</option>
                             <option value="asc">Crescente</option>
                         </select>
-                        <input type="submit" placeholder="Pesquisar">
+                        <input type="submit" value="Pesquisar">
                     </form>
+
+                    <form method="GET" action="{{ route('index') }}">
+                        @csrf
+                        <input type="submit" value="Paginado">
+                    </form>
+                </div>
+
                   <table class="table ">
                     <thead>
                       <tr>
@@ -605,6 +613,9 @@ $(document).ready(function() {
 
 
                   </table>
+                  @if($dados instanceof \Illuminate\Pagination\LengthAwarePaginator)
+                  {{ $dados->links('vendor.pagination.default') }}
+              @endif
 
                 </div>
 
@@ -654,10 +665,6 @@ $(document).ready(function() {
         });
     });
 </script>
-
-Ao adicionar showCancelButton: true na configuração do Swal.fire, você estará instruindo o SweetAlert a mostrar o botão "Cancelar". Além disso, ajustamos as cores dos botões de confirmação e cancelamento usando confirmButtonColor e cancelButtonColor, respectivamente, e definimos os textos dos botões com confirmButtonText e cancelButtonText.
-
-Essa configuração permitirá que o usuário escolha entre "Cancelar" e "Confirmar". Se o usuário clicar em "Confirmar", a ação será executada, caso contrário, a mensagem "Operação cancelada!" será exibida.
 
 
   </main><!-- End #main -->

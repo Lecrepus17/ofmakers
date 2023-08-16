@@ -9,6 +9,74 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+.form-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-container form {
+    margin-right: 10px;
+}
+
+.form-container input[type="date"],
+.form-container select,
+.form-container input[type="submit"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-container input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/* Estilo para a paginação */
+ul.pagination {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.pagination li {
+    margin: 0 5px;
+    display: inline-block;
+}
+
+ul.pagination li a {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+ul.pagination li a:hover {
+    background-color: #f8f8f8;
+}
+
+ul.pagination .active a {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+ul.pagination .disabled {
+    color: #999;
+    pointer-events: none;
+    cursor: default;
+}
+
 :root {
   scroll-behavior: smooth;
 }

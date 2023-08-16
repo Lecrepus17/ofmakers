@@ -14,7 +14,7 @@ class DadosController extends Controller
             $ord = $request->ord == 'desc' ? 'desc' : 'asc';
             $busca = $request->busca;
             if ($busca == ""){
-            $dados = Dado::orderBy('tempo', $ord)->paginate();
+            $dados = Dado::orderBy('tempo', $ord)->get();
             }else{
             $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
             }
