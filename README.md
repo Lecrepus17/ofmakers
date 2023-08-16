@@ -1,5 +1,7 @@
 # ofmakers
 sudo /opt/lampp/xampp start apache  
+php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider"
+
 sudo apt-get install php-mysql
 
 botão delete composer require realrashid/sweet-alert
