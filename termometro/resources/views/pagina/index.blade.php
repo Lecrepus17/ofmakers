@@ -254,6 +254,8 @@ $(document).ready(function() {
     switch (option) {
       case 'maior':
         $('#temperature-value').text('{{$tempMaxToday}} °C');
+        $('#humidityToday').text('{{$umidMaxToday}} %'); // Update humidity
+
         if ({{$tempMaxToday}} >= 13) {
           $('#temperature-icon').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
         } else {
@@ -263,6 +265,8 @@ $(document).ready(function() {
       case 'media':
         // Atualizar valores para o caso "media"
         $('#temperature-value').text('{{$tempAvgToday}} °C');
+        $('#humidityToday').text('{{$umidAvgToday}} %'); // Update humidity
+
         if ({{$tempAvgToday}} >= 13) {
           $('#temperature-icon').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
         } else {
@@ -272,6 +276,8 @@ $(document).ready(function() {
       case 'menor':
         // Atualizar valores para o caso "menor"
         $('#temperature-value').text('{{$tempMinToday}} °C');
+        $('#humidityToday').text('{{$umidMinToday}} %'); // Update humidity
+
         if ({{$tempMinToday}} >= 13) {
           $('#temperature-icon').removeClass('bi-thermometer-snow').addClass('bi-thermometer-sun');
         } else {
@@ -292,12 +298,15 @@ $(document).ready(function() {
     switch (option2) {
       case 'maior':
         $('#tempMonth').text('{{$tempMaxMonth}} °C');
+        $('#humidityMonth').text('{{$umidMaxMonth}} %'); // Update humidity
         break;
       case 'menor':
         $('#tempMonth').text('{{$tempMinMonth}} °C');
+        $('#humidityMonth').text('{{$umidMinMonth}} %'); // Update humidity
         break;
       case 'media':
         $('#tempMonth').text('{{$tempAvgMonth}} °C');
+        $('#humidityMonth').text('{{$umidAvgMonth}} %'); // Update humidity
         break;
     }
   });
@@ -305,6 +314,7 @@ $(document).ready(function() {
 });
 
     </script>
+
     <section class="section dashboard">
       <div class="row">
 
@@ -339,10 +349,11 @@ $(document).ready(function() {
                       </div>
                       <div class="ps-3">
                         <h6 id="temperature-value" class="temperature-value">{{$tempMaxToday}} °C</h6>
-                        <span class="text-success small pt-1 fw-bold">16%</span>
+                        <span id="humidityToday" class="text-success small pt-1 fw-bold">{{$umidMaxToday}}%</span>
                         <span class="text-muted small pt-2 ps-1">Umidade</span>
                       </div>
                     </div>
+
                   </div>
 
 
@@ -376,7 +387,7 @@ $(document).ready(function() {
 
                     <div class="ps-3">
                       <h6 id="tempMonth" class="tempMonth">{{$tempMaxMonth}} °C</h6>
-                      <span class="text-success small pt-1 fw-bold">17%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
+                      <span id="humidityMonth" class="text-success small pt-1 fw-bold">{{$umidMaxMonth}}%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
 
                     </div>
                   </div>
@@ -401,7 +412,7 @@ $(document).ready(function() {
                     </div>
                     <div class="ps-3">
                       <h6>{{$temperaturaNow}}°C</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
+                      <span class="text-success small pt-1 fw-bold">{{$umidadeNow}}%</span> <span class="text-muted small pt-2 ps-1">Umidade</span>
 
                     </div>
                   </div>

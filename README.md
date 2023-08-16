@@ -1,5 +1,9 @@
 # ofmakers
 sudo /opt/lampp/xampp start apache  
+composer require realrashid/sweet-alert
+
+
+
 php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider"
 
 sudo apt-get install php-mysql

@@ -33,12 +33,15 @@ class DadosController extends Controller
     $resposta = json_decode($graficoDia, true);
 
     $temperaturaAtual = Dado::orderBy('tempo', 'desc')->limit(1)->first();
+    $umidadeAtual = Dado::orderBy('tempo', 'desc')->limit(1)->first();
 
 
     // Obter a data de 15 dias atrás a partir de hoje
     $dataLimiteInferior = Carbon::now()->subDays(15)->format('Y-m-d');
 
     $temperaturaNow =  $temperaturaAtual->temperatura;
+    $umidadeNow =  $umidadeAtual->umidade;
+
 
 
     // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
@@ -88,6 +91,7 @@ class DadosController extends Controller
             'tempMonth' => $temperaturasMonth,
             'umidMonth' => $umidadeMonth,
             'month' => $tempoMonth,
+            'umidadeNow' => $umidadeNow,
             'temperaturaNow' => $temperaturaNow,
             'tempMaxToday' => $tempMaxToday,
             'tempMinToday' => $tempMinToday,
