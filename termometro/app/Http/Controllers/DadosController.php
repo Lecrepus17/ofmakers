@@ -10,21 +10,44 @@ class DadosController extends Controller
 {
 
     public function index(Request $request){
+
+    // Obter a data atual
+    $dataAtual = Carbon::now()->format('Y-m-d');
+
         if ($request->isMethod('POST')){
             $ord = $request->ord == 'desc' ? 'desc' : 'asc';
             $busca = $request->busca;
+            $mes = $request->mes;
             if ($busca == ""){
             $dados = Dado::orderBy('tempo', $ord)->get();
             }else{
             $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
+            }
+            if ($mes = 0){
+            $mes = $request->input('mes');
+            $ano = $request->input('ano');
+
+            // Fazer a consulta usando whereBetween para obter os dados do mês e ano especificados
+            $dadosUltimos15Dias = Dado::whereYear('tempo', $ano)
+                ->whereMonth('tempo', $mes)
+                ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
+                ->groupBy('data')
+                ->get();
+            }else{
+
+                // Obter a data de 15 dias atrás a partir de hoje
+                $dataLimiteInferior = Carbon::now()->subDays(30)->format('Y-m-d');
+                // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
+                $dadosUltimos15Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
+                            ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
+                            ->groupBy('data')
+                            ->get();
             }
         } else {
         $dados = Dado::orderBy('tempo', 'desc')->paginate();
     }
 
 
-    // Obter a data atual
-    $dataAtual = Carbon::now()->format('Y-m-d');
 
     // Fazer a consulta usando whereDate para obter os dados do dia atual
     $graficoDia = Dado::whereDate('tempo', '=', $dataAtual)->get();
@@ -36,19 +59,21 @@ class DadosController extends Controller
     $umidadeAtual = Dado::orderBy('tempo', 'desc')->limit(1)->first();
 
 
-    // Obter a data de 15 dias atrás a partir de hoje
-    $dataLimiteInferior = Carbon::now()->subDays(15)->format('Y-m-d');
+
+
+    $tempMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('temperatura');
+    $umidMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('umidade');
+
+    $tempMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('temperatura');
+    $umidMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('umidade');
+
+    $tempAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura');
+    $umidAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('umidade');
+
+
 
     $temperaturaNow =  $temperaturaAtual->temperatura;
     $umidadeNow =  $umidadeAtual->umidade;
-
-
-
-    // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
-    $dadosUltimos15Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
-                            ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
-                            ->groupBy('data')
-                            ->get();
 
     $temperaturasToday = collect($resposta)->pluck('temperatura');
     $umidadeToday = collect($resposta)->pluck('umidade');
@@ -74,14 +99,6 @@ class DadosController extends Controller
     $tempAvgToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('temperatura');
     $umidAvgToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('umidade');
 
-    $tempMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('temperatura');
-    $umidMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('umidade');
-
-    $tempMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('temperatura');
-    $umidMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('umidade');
-
-    $tempAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura');
-    $umidAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('umidade');
 
         return view('pagina.index', [
             'dados' => $dados,
