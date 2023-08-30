@@ -14,6 +14,7 @@ class DadosController extends Controller
     // Obter a data atual
     $dataAtual = Carbon::now()->format('Y-m-d');
 
+
         if ($request->isMethod('POST')){
             $anoMes = $request->input('ano_mes');
             list($ano, $mes) = explode('-', $anoMes);
