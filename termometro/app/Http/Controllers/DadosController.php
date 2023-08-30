@@ -14,14 +14,11 @@ class DadosController extends Controller
     // Obter a data atual
     $dataAtual = Carbon::now()->format('Y-m-d');
 
-
         if ($request->isMethod('POST')){
             $anoMes = $request->input('ano_mes');
             list($ano, $mes) = explode('-', $anoMes);
-
             $ord = $request->ord == 'desc' ? 'desc' : 'asc';
             $busca = $request->busca;
-            $mes = $request->mes;
             if ($busca == ""){
             $dados = Dado::orderBy('tempo', $ord)->get();
             }else{
@@ -30,7 +27,6 @@ class DadosController extends Controller
             if ($mes != 0){
             //$mes = $request->input('mes');
             //$ano = $request->input('ano');
-
             // Fazer a consulta usando whereBetween para obter os dados do mês e ano especificados
             $dadosUltimos30Dias = Dado::whereYear('tempo', $ano)
                 ->whereMonth('tempo', $mes)
@@ -110,12 +106,10 @@ class DadosController extends Controller
     $tempAvgToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('temperatura');
     $umidAvgToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('umidade');
 
-
     $mesesAnos = Dado::select(Dado::raw('YEAR(tempo) as ano, MONTH(tempo) as mes'))
     ->groupBy('ano', 'mes')
     ->orderBy('ano', 'desc') // Opcional: ordene por ano decrescente para exibir os anos mais recentes primeiro
     ->get();
-
         return view('pagina.index', [
             'dados' => $dados,
             'tempToday' => $temperaturasToday,
