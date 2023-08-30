@@ -19,6 +19,7 @@ class DadosController extends Controller
             list($ano, $mes) = explode('-', $anoMes);
             $ord = $request->ord == 'desc' ? 'desc' : 'asc';
             $busca = $request->busca;
+
             if ($busca == ""){
             $dados = Dado::orderBy('tempo', $ord)->get();
             }else{
@@ -33,6 +34,14 @@ class DadosController extends Controller
                 ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
                 ->groupBy('data')
                 ->get();
+            $tempMaxMonth = Dado::whereMonth('tempo', '=', $mes)->max('temperatura');
+            $umidMaxMonth = Dado::whereMonth('tempo', '=', $mes)->max('umidade');
+
+            $tempMinMonth = Dado::whereMonth('tempo', '=', $mes)->min('temperatura');
+            $umidMinMonth = Dado::whereMonth('tempo', '=', $mes)->min('umidade');
+
+            $tempAvgMonth = Dado::whereMonth('tempo', '=', $mes)->avg('temperatura');
+            $umidAvgMonth = Dado::whereMonth('tempo', '=', $mes)->avg('umidade');
             }else{
                 // Obter a data de 15 dias atrás a partir de hoje
                 $dataLimiteInferior = Carbon::now()->subDays(30)->format('Y-m-d');
@@ -41,17 +50,32 @@ class DadosController extends Controller
                             ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
                             ->groupBy('data')
                             ->get();
+            $tempMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('temperatura');
+            $umidMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('umidade');
 
+            $tempMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('temperatura');
+            $umidMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('umidade');
+
+            $tempAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura');
+            $umidAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('umidade');
             }
         } else {
         $dados = Dado::orderBy('tempo', 'desc')->paginate();
-                        // Obter a data de 15 dias atrás a partir de hoje
-                        $dataLimiteInferior = Carbon::now()->subDays(30)->format('Y-m-d');
-                        // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
-                        $dadosUltimos30Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
-                                    ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
-                                    ->groupBy('data')
-                                    ->get();
+        // Obter a data de 15 dias atrás a partir de hoje
+        $dataLimiteInferior = Carbon::now()->subDays(30)->format('Y-m-d');
+        // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
+        $dadosUltimos30Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
+            ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
+            ->groupBy('data')
+            ->get();
+            $tempMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('temperatura');
+            $umidMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('umidade');
+
+            $tempMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('temperatura');
+            $umidMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('umidade');
+
+            $tempAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura');
+            $umidAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('umidade');
     }
 
 
@@ -68,14 +92,7 @@ class DadosController extends Controller
 
 
 
-    $tempMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('temperatura');
-    $umidMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('umidade');
 
-    $tempMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('temperatura');
-    $umidMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('umidade');
-
-    $tempAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura');
-    $umidAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('umidade');
 
 
 
