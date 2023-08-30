@@ -28,6 +28,8 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/estilo.css" rel="stylesheet">
+
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -378,24 +380,16 @@ $(document).ready(function() {
                 </div>
 
                 <div class="card-body">
-                    <h5 class="card-title">Temperatura do Mês <span>| <span id="filtroOp2">Maior</span></span></h5>
+                    <h5 class="card-title">Temperatura do Mês <span>| <span id="filtroOp2">Maior</span>
+                        </span>
+                        </h5>
+
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                         <i id="caldendar" class="bi bi-calendar"></i>
                       </div>
-                      <form action="{{ route('index') }}" method="post">
-                        @csrf
-                        <select name="ano_mes" id="ano_mes">
-                            @foreach ($mesesAnos as $mesAno)
-                                <option value="{{ $mesAno->ano }}-{{ str_pad($mesAno->mes, 2, '0', STR_PAD_LEFT) }}">
-                                    {{ $mesAno->ano }} - {{ $mesAno->mes }}
-                                </option>
-                            @endforeach
-                        </select>
 
-                        <button type="submit">Enviar</button>
-                    </form>
 
                     <div class="ps-3">
                       <h6 id="tempMonth" class="tempMonth">{{$tempMaxMonth}} °C</h6>
@@ -518,8 +512,24 @@ $(document).ready(function() {
       <div class="card-body">
         <h5 class="card-title">Gráfico<span> / Mês</span></h5>
 
+
         <!-- Line Chart -->
-        <div id="lineChart"></div>
+        <div id="lineChart">
+            <form action="{{ route('index') }}" method="post" >
+                @csrf
+                <div class="select-container">
+                    <select name="ano_mes" id="ano_mes" class="select-box">
+                        @foreach ($mesesAnos as $mesAno)
+                            <option value="{{ $mesAno->ano }}-{{ str_pad($mesAno->mes, 2, '0', STR_PAD_LEFT) }}">
+                                {{ $mesAno->ano }} - {{ $mesAno->mes }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <button type="submit" class="submit-button">Enviar</button>
+                </div>
+            </form>
+        </div>
+
 
         <script>
 
