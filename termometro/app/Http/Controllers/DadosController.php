@@ -15,36 +15,45 @@ class DadosController extends Controller
     $dataAtual = Carbon::now()->format('Y-m-d');
 
         if ($request->isMethod('POST')){
+                            $mes = '07';
+                $ano = '2023';
             $ord = $request->ord == 'desc' ? 'desc' : 'asc';
             $busca = $request->busca;
-            $mes = $request->mes;
+            //$mes = $request->mes;
             if ($busca == ""){
             $dados = Dado::orderBy('tempo', $ord)->get();
             }else{
             $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
             }
-            if ($mes = 0){
-            $mes = $request->input('mes');
-            $ano = $request->input('ano');
+            if ($mes != 0){
+            //$mes = $request->input('mes');
+            //$ano = $request->input('ano');
 
             // Fazer a consulta usando whereBetween para obter os dados do mês e ano especificados
-            $dadosUltimos15Dias = Dado::whereYear('tempo', $ano)
+            $dadosUltimos30Dias = Dado::whereYear('tempo', $ano)
                 ->whereMonth('tempo', $mes)
                 ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
                 ->groupBy('data')
                 ->get();
             }else{
-
                 // Obter a data de 15 dias atrás a partir de hoje
                 $dataLimiteInferior = Carbon::now()->subDays(30)->format('Y-m-d');
                 // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
-                $dadosUltimos15Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
+                $dadosUltimos30Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
                             ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
                             ->groupBy('data')
                             ->get();
+
             }
         } else {
         $dados = Dado::orderBy('tempo', 'desc')->paginate();
+                        // Obter a data de 15 dias atrás a partir de hoje
+                        $dataLimiteInferior = Carbon::now()->subDays(30)->format('Y-m-d');
+                        // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
+                        $dadosUltimos30Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
+                                    ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
+                                    ->groupBy('data')
+                                    ->get();
     }
 
 
@@ -80,14 +89,14 @@ class DadosController extends Controller
     $tempoToday = collect($resposta)->pluck('tempo');
 
 
-    $temperaturasMonth = collect($dadosUltimos15Dias)->pluck('temperatura_media')->map(function ($value) {
+    $temperaturasMonth = collect($dadosUltimos30Dias)->pluck('temperatura_media')->map(function ($value) {
         return number_format($value, 1);
     });
 
-    $umidadeMonth = collect($dadosUltimos15Dias)->pluck('umidade_media')->map(function ($value) {
+    $umidadeMonth = collect($dadosUltimos30Dias)->pluck('umidade_media')->map(function ($value) {
         return number_format($value, 1);
     });
-    $tempoMonth = collect($dadosUltimos15Dias)->pluck('data');
+    $tempoMonth = collect($dadosUltimos30Dias)->pluck('data');
 
 
     $tempMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('temperatura');
