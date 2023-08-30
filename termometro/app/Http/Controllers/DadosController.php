@@ -15,11 +15,12 @@ class DadosController extends Controller
     $dataAtual = Carbon::now()->format('Y-m-d');
 
         if ($request->isMethod('POST')){
-                            $mes = '07';
-                $ano = '2023';
+            $anoMes = $request->input('ano_mes');
+            list($ano, $mes) = explode('-', $anoMes);
+
             $ord = $request->ord == 'desc' ? 'desc' : 'asc';
             $busca = $request->busca;
-            //$mes = $request->mes;
+            $mes = $request->mes;
             if ($busca == ""){
             $dados = Dado::orderBy('tempo', $ord)->get();
             }else{
