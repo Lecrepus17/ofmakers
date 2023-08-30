@@ -384,6 +384,18 @@ $(document).ready(function() {
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                         <i id="caldendar" class="bi bi-calendar"></i>
                       </div>
+                      <form action="{{ route('index') }}" method="post">
+                        @csrf
+                        <select name="ano_mes" id="ano_mes">
+                            @foreach ($mesesAnos as $mesAno)
+                                <option value="{{ $mesAno->ano }}-{{ str_pad($mesAno->mes, 2, '0', STR_PAD_LEFT) }}">
+                                    {{ $mesAno->ano }} - {{ $mesAno->mes }}
+                                </option>
+                            @endforeach
+                        </select>
+
+                        <button type="submit">Enviar</button>
+                    </form>
 
                     <div class="ps-3">
                       <h6 id="tempMonth" class="tempMonth">{{$tempMaxMonth}} °C</h6>

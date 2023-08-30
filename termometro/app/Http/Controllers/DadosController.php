@@ -110,6 +110,11 @@ class DadosController extends Controller
     $umidAvgToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('umidade');
 
 
+    $mesesAnos = Dado::select(Dado::raw('YEAR(tempo) as ano, MONTH(tempo) as mes'))
+    ->groupBy('ano', 'mes')
+    ->orderBy('ano', 'desc') // Opcional: ordene por ano decrescente para exibir os anos mais recentes primeiro
+    ->get();
+
         return view('pagina.index', [
             'dados' => $dados,
             'tempToday' => $temperaturasToday,
@@ -132,6 +137,7 @@ class DadosController extends Controller
             'umidMaxMonth' => $umidMaxMonth,
             'umidMinMonth' => $umidMinMonth,
             'umidAvgMonth' => $umidAvgMonth,
+            'mesesAnos' => $mesesAnos,
         ]);}
     // mostra mais especifica de datas
     public function view(Dado $dado){
