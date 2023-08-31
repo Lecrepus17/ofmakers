@@ -150,6 +150,7 @@ class DadosController extends Controller
             'umidMinMonth' => $umidMinMonth,
             'umidAvgMonth' => $umidAvgMonth,
             'mesesAnos' => $mesesAnos,
+            'selectedAnoMes' => request('ano_mes'),
         ]);}
     // mostra mais especifica de datas
     public function view(Dado $dado){
