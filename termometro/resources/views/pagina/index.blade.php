@@ -383,14 +383,15 @@ $(document).ready(function() {
                             </option>
                         @endforeach
                     </select>
-                    <button type="submit" class="submit-button">Enviar</button>
-                </div>
-            </form>
-            <form method="GET" action="{{ route('index') }}">
-                @csrf
-                <input type="submit" value="Últimos 30 dias">
-            </form>
-        </div>
+                        <input type="submit" class="submit-button me-2" value="Enviar"><!-- Adicionamos a classe me-2 para uma margem direita -->
+                    </form>
+                    <form method="GET" action="{{ route('index') }}">
+                        @csrf
+                        <input type="submit" class="submit-button" value="Últimos 30 dias">
+                    </form>
+                    </div>
+
+            </div>
 
 
         <script>
