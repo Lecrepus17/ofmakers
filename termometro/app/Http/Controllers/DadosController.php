@@ -19,14 +19,14 @@ class DadosController extends Controller
             list($ano, $mes) = explode('-', $anoMes);
             $busca = $request->busca;
             $ord = $request->ord;
-            if ($busca == null){
-            $ord = $request->ord == 'desc' ? 'desc' : 'asc';
-            $dados = Dado::orderBy('tempo', $ord)->get();
-            }elseif($ord == null){
-                $dados = Dado::orderBy('tempo', 'desc')->paginate();
+            if ($busca != null){
+                $ord = $request->ord == 'desc' ? 'desc' : 'asc';
+                $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
+            }elseif($ord != null){
+                $dados = Dado::orderBy('tempo', $ord)->get();
             }
             else{
-            $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
+                $dados = Dado::orderBy('tempo', 'desc')->paginate();
             }
             if ($mes != 0){
             //$mes = $request->input('mes');
