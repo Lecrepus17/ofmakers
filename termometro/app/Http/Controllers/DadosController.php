@@ -17,12 +17,15 @@ class DadosController extends Controller
         if ($request->isMethod('POST')){
             $anoMes = $request->input('ano_mes');
             list($ano, $mes) = explode('-', $anoMes);
-            $ord = $request->ord == 'desc' ? 'desc' : 'asc';
             $busca = $request->busca;
-
-            if ($busca == ""){
+            $ord = $request->ord;
+            if ($busca == null){
+            $ord = $request->ord == 'desc' ? 'desc' : 'asc';
             $dados = Dado::orderBy('tempo', $ord)->get();
-            }else{
+            }elseif($ord == null){
+                $dados = Dado::orderBy('tempo', 'desc')->paginate();
+            }
+            else{
             $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
             }
             if ($mes != 0){
@@ -40,8 +43,8 @@ class DadosController extends Controller
             $tempMinMonth = Dado::whereMonth('tempo', '=', $mes)->min('temperatura');
             $umidMinMonth = Dado::whereMonth('tempo', '=', $mes)->min('umidade');
 
-            $tempAvgMonth = Dado::whereMonth('tempo', '=', $mes)->avg('temperatura');
-            $umidAvgMonth = Dado::whereMonth('tempo', '=', $mes)->avg('umidade');
+            $tempAvgMonth = number_format(Dado::whereMonth('tempo', '=', $mes)->avg('temperatura'), 2);
+            $umidAvgMonth = number_format(Dado::whereMonth('tempo', '=', $mes)->avg('umidade'), 2);
             }else{
                 // Obter a data de 15 dias atrás a partir de hoje
                 $dataLimiteInferior = Carbon::now()->subDays(30)->format('Y-m-d');
@@ -56,8 +59,8 @@ class DadosController extends Controller
             $tempMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('temperatura');
             $umidMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('umidade');
 
-            $tempAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura');
-            $umidAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('umidade');
+            $tempAvgMonth = number_format(Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura'), 2);
+            $umidAvgMonth = number_format(Dado::whereMonth('tempo', '=', date('m'))->avg('umidade'), 2);
             }
         } else {
         $dados = Dado::orderBy('tempo', 'desc')->paginate();
@@ -74,8 +77,8 @@ class DadosController extends Controller
             $tempMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('temperatura');
             $umidMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('umidade');
 
-            $tempAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura');
-            $umidAvgMonth = Dado::whereMonth('tempo', '=', date('m'))->avg('umidade');
+            $tempAvgMonth = number_format(Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura'), 2);
+            $umidAvgMonth = number_format(Dado::whereMonth('tempo', '=', date('m'))->avg('umidade'), 2);
     }
 
 
@@ -120,8 +123,8 @@ class DadosController extends Controller
     $tempMinToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->min('temperatura');
     $umidMinToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->min('umidade');
 
-    $tempAvgToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('temperatura');
-    $umidAvgToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('umidade');
+    $tempAvgToday = number_format(Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('temperatura'), 2);
+    $umidAvgToday = number_format(Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('umidade'), 2);
 
     $mesesAnos = Dado::select(Dado::raw('YEAR(tempo) as ano, MONTH(tempo) as mes'))
     ->groupBy('ano', 'mes')
