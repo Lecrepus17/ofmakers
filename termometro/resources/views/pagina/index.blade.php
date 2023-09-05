@@ -379,15 +379,16 @@ $(document).ready(function() {
                                 selected
                             @endif
                         >
-
-
-
                                 {{ $mesAno->ano }} - {{ $mesAno->mes }}
                             </option>
                         @endforeach
                     </select>
                     <button type="submit" class="submit-button">Enviar</button>
                 </div>
+            </form>
+            <form method="GET" action="{{ route('index') }}">
+                @csrf
+                <input type="submit" value="Últimos 30 dias">
             </form>
         </div>
 
