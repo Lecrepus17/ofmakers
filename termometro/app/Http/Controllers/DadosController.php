@@ -165,7 +165,7 @@ class DadosController extends Controller
     // caso realmente precise deletar
     public function delete(Dado $dado){
         $dado->delete();
-        return redirect()->route('index')->with('sucesso', 'Dado deletado com sucesso!');
+        return redirect()->route('listagem')->with('sucesso', 'Dado deletado com sucesso!');
     }
 
 

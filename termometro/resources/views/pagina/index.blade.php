@@ -452,69 +452,6 @@ $(document).ready(function() {
 
 
 
-            <!-- Recent Sales -->
-            <div class="col-12">
-
-
-              <div class="card ">
-
-
-
-                <div class="card-body">
-                  <h5 class="card-title">Temperatura recente <span>| Hoje</span></h5>
-                  <div class="form-container">
-                    <form method="POST" action="{{ route('index') }}">
-                        @csrf
-                        <input type="date" name="busca" id="pesquisaData">
-                        <select name="ord">
-                            <option value="desc">Decrescente</option>
-                            <option value="asc">Crescente</option>
-                        </select>
-                        <input type="submit" value="Pesquisar">
-                    </form>
-
-                    <form method="GET" action="{{ route('index') }}">
-                        @csrf
-                        <input type="submit" value="Paginado">
-                    </form>
-                </div>
-
-                  <table class="table ">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Temperatura</th>
-                        <th scope="col">Umidade</th>
-                        <th scope="col">Horário</th>
-                        <th scope="col">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($dados as $dado)
-                            <tr>
-                                <th scope="row"><a href="#">{{ $dado->id }}</a></th>
-                                <td>{{ $dado->temperatura }} ºC</td>
-                                <td>{{ $dado->umidade }}%</td>
-                                <td>{{ $dado->tempo }}</td>
-                                <td>
-                                    <a href="{{ route('delete', ['dado' => $dado->id]) }}" class="delete-button" id="deleteButton{{$dado->id}}">
-                                        <span class="badge bg-danger">Apagar</span>
-                                    </a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-
-
-                  </table>
-                  @if($dados instanceof \Illuminate\Pagination\LengthAwarePaginator)
-                  {{ $dados->links('vendor.pagination.default') }}
-              @endif
-
-                </div>
-
-              </div>
-            </div><!-- End Recent Sales -->
 
             <!-- Top Selling -->
 
@@ -526,39 +463,7 @@ $(document).ready(function() {
       </div>
     </section>
 
-<!-- Script para lidar com a janela de confirmação -->
-<!-- Inclua as bibliotecas necessárias -->
-<script src="{{ asset('assets/js/sweetalert.all.js') }}"></script>
-<!-- Seus scripts -->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        // Coloque suas interações do SweetAlert aqui
-        const deleteButtons = document.querySelectorAll(".delete-button");
 
-        deleteButtons.forEach(button => {
-            button.addEventListener("click", function(event) {
-                event.preventDefault();
-
-                Swal.fire({
-                    title: "Você tem certeza?",
-                    text: "Esta ação não pode ser desfeita!",
-                    icon: "warning",
-                    showCancelButton: true, // Mostrar o botão "Cancelar"
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Confirmar",
-                    cancelButtonText: "Cancelar",
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = this.getAttribute('href');
-                    } else {
-                        Swal.fire("Operação cancelada!", "", "info");
-                    }
-                });
-            });
-        });
-    });
-</script>
 
 
   </main><!-- End #main -->

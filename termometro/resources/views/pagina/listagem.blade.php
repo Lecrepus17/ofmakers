@@ -90,7 +90,7 @@
       <div class="card-body">
         <h5 class="card-title">Temperatura recente <span>| Hoje</span></h5>
         <div class="form-container">
-          <form method="POST" action="{{ route('index') }}">
+          <form method="POST" action="{{ route('listagem') }}">
               @csrf
               <input type="date" name="busca" id="pesquisaData">
               <select name="ord">
