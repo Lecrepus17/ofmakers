@@ -260,7 +260,11 @@ $(document).ready(function() {
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-thermometer-sun"></i>
+                        @if($temperaturaNow < 13)
+                        <i class="bi bi-thermometer-snow"></i> <!-- Ícone de neve -->
+                    @else
+                        <i class="bi bi-thermometer-sun"></i> <!-- Ícone de sol -->
+                    @endif
                     </div>
                     <div class="ps-3">
                       <h6>{{$temperaturaNow}}°C</h6>
