@@ -169,8 +169,25 @@ class DadosController extends Controller
     }
 
 
-    public function listagem(){
-        return view('pagina.listagem');
+    public function listagem(Request $request){
+        if ($request->isMethod('POST')){
+            $busca = $request->busca;
+            $ord = $request->ord;
+            if ($busca != null){
+                $ord = $request->ord == 'desc' ? 'desc' : 'asc';
+                $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
+            }elseif($ord != null){
+                $dados = Dado::orderBy('tempo', $ord)->get();
+            }
+            else{
+                $dados = Dado::orderBy('tempo', 'desc')->paginate();
+            }
+        } else {
+            $dados = Dado::orderBy('tempo', 'desc')->paginate();
+        }
+        return view('pagina.listagem',[
+            'dados' => $dados,
+        ]);
     }
 }
 
