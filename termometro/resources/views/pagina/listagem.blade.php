@@ -73,8 +73,8 @@
       <h1>Estação metereológica</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">temperatura</li>
+            <li class="breadcrumb-item"><a href="{{Route('index')}}">Home</a></li>
+            <li class="breadcrumb-item active"><a href="{{Route('listagem')}}">Listagem</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
