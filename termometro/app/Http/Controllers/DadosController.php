@@ -17,17 +17,6 @@ class DadosController extends Controller
         if ($request->isMethod('POST')){
             $anoMes = $request->input('ano_mes');
             list($ano, $mes) = explode('-', $anoMes);
-            $busca = $request->busca;
-            $ord = $request->ord;
-            if ($busca != null){
-                $ord = $request->ord == 'desc' ? 'desc' : 'asc';
-                $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
-            }elseif($ord != null){
-                $dados = Dado::orderBy('tempo', $ord)->get();
-            }
-            else{
-                $dados = Dado::orderBy('tempo', 'desc')->paginate();
-            }
             if ($mes != 0){
             //$mes = $request->input('mes');
             //$ano = $request->input('ano');
@@ -63,7 +52,6 @@ class DadosController extends Controller
             $umidAvgMonth = number_format(Dado::whereMonth('tempo', '=', date('m'))->avg('umidade'), 2);
             }
         } else {
-        $dados = Dado::orderBy('tempo', 'desc')->paginate();
         // Obter a data de 15 dias atrás a partir de hoje
         $dataLimiteInferior = Carbon::now()->subDays(30)->format('Y-m-d');
         // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
@@ -131,7 +119,6 @@ class DadosController extends Controller
     ->orderBy('ano', 'desc') // Opcional: ordene por ano decrescente para exibir os anos mais recentes primeiro
     ->get();
         return view('pagina.index', [
-            'dados' => $dados,
             'tempToday' => $temperaturasToday,
             'umidToday' => $umidadeToday,
             'today' => $tempoToday,
