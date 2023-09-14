@@ -19,7 +19,7 @@ class DadoFactory extends Factory
         return [
             'temperatura' => $this->faker->randomFloat(1, -10, 30),
             'umidade' => $this->faker->numberBetween( 1, 100),
-            'tempo' => $this->faker->dateTimeBetween('-32 days', 'now'),
+            'tempo' => $this->faker->dateTimeBetween('-400 days', 'now'),
         ];
     }
 }
