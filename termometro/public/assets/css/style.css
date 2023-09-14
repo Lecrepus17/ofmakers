@@ -42,7 +42,6 @@
 }
 
 .submit-button {
-    padding: 8px 15px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -54,6 +53,23 @@
     background-color: #0056b3;
 }
 
+
+.link-listagem {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    color: #007BFF; /* Define a cor do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    padding: 10px 20px; /* Adiciona um preenchimento interno */
+    transition: background-color 0.3s, color 0.3s; /* Efeito de transição suave */
+}
+
+.paragrafo{
+    vertical-align: middle; /* Alinha verticalmente ao centro */
+    margin-right: 10px;
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-weight: bold; /* Deixa o texto em negrito */
+    transition: background-color 0.3s, color 0.3s; /* Efeito de transição suave */
+
+}
 
 
 

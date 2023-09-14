@@ -46,7 +46,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{route('index')}}" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
         <span class="d-none d-lg-block">OfMakers</span>
       </a>
@@ -54,8 +54,33 @@
 
 
 
+    <p class="paragrafo">Selecionar dia ou mês:</p>&nbsp; &nbsp;
+    <div class="d-flex align-items-center">
+        <div class="form-container">
+            <form method="POST" action="{{ route('index') }}">
+                @csrf
+                <input type="date" name="busca" id="pesquisaData">
+                <select name="ano_mes" id="ano_mes" class="select-box">
+                    @foreach ($mesesAnos as $mesAno)
+                        <option value="{{ $mesAno->ano }}-{{ str_pad($mesAno->mes, 2, '0', STR_PAD_LEFT) }}"
+                            @if ($selectedAnoMes === $mesAno->ano . '-' . str_pad($mesAno->mes, 2, '0', STR_PAD_LEFT))
+                            selected
+                        @endif
+                    >
+                            {{ $mesAno->ano }} - {{ $mesAno->mes }}
+                        </option>
+                    @endforeach
+                </select>
+                <input type="submit" value="Enviar">
+            </form>
+            <form method="GET" action="{{ route('index') }}">
+                @csrf
+                <input type="submit" class="submit-button" value="Últimos 30 dias">
+            </form>
+        </div>
 
 
+    </div>
 
 
 
@@ -73,8 +98,8 @@
       <h1>Estação metereológica</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{Route('index')}}">Home</a></li>
-          <li class="breadcrumb-item active"><a href="{{Route('listagem')}}">Listagem</a></li>
+        <li class="breadcrumb-item"><a href="{{Route('index')}}">Home /</a></li>
+         <li class="breadcrumb-item active"><a href="{{Route('listagem')}}"> Listagem</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -186,6 +211,7 @@ $(document).ready(function() {
                   <div class="card-body">
                     <h5 class="card-title">Temperatura de Hoje <span>| <span id="filter-option">Maior</span></span></h5>
 
+
                     <div class="d-flex align-items-center">
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                           <i id="temperature-icon" class="bi bi-thermometer-sun"></i>
@@ -277,7 +303,6 @@ $(document).ready(function() {
               </div>
 
             </div><!-- End Customers Card -->
-
 <!-- Reports - Gráfico 1 -->
 <div class="col-12">
     <div class="card">
@@ -369,26 +394,7 @@ $(document).ready(function() {
 
         <!-- Line Chart -->
         <div id="lineChart">
-            <form action="{{ route('index') }}" method="post" >
-                @csrf
-                <div class="select-container">
-                    <select name="ano_mes" id="ano_mes" class="select-box">
-                        @foreach ($mesesAnos as $mesAno)
-                            <option value="{{ $mesAno->ano }}-{{ str_pad($mesAno->mes, 2, '0', STR_PAD_LEFT) }}"
-                                @if ($selectedAnoMes === $mesAno->ano . '-' . str_pad($mesAno->mes, 2, '0', STR_PAD_LEFT))
-                                selected
-                            @endif
-                        >
-                                {{ $mesAno->ano }} - {{ $mesAno->mes }}
-                            </option>
-                        @endforeach
-                    </select>
-                        <input type="submit" class="submit-button me-2" value="Enviar"><!-- Adicionamos a classe me-2 para uma margem direita -->
-                    </form>
-                    <form method="GET" action="{{ route('index') }}">
-                        @csrf
-                        <input type="submit" class="submit-button" value="Últimos 30 dias">
-                    </form>
+
                     </div>
 
             </div>
