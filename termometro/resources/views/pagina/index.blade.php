@@ -61,12 +61,13 @@
                 @csrf
                 <input type="date" name="dia" id="pesquisaData">
                 <select name="ano_mes" id="ano_mes" class="select-box">
+                    <option value="">Selecione o mês</option> <!-- Opção vazia -->
                     @foreach ($mesesAnos as $mesAno)
                         <option value="{{ $mesAno->ano }}-{{ str_pad($mesAno->mes, 2, '0', STR_PAD_LEFT) }}"
                             @if ($selectedAnoMes === $mesAno->ano . '-' . str_pad($mesAno->mes, 2, '0', STR_PAD_LEFT))
                             selected
-                        @endif
-                    >
+                            @endif
+                        >
                             {{ $mesAno->ano }} - {{ $mesAno->mes }}
                         </option>
                     @endforeach
