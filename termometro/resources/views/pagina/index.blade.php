@@ -209,7 +209,7 @@ $(document).ready(function() {
                   </div>
 
                   <div class="card-body">
-                    <h5 class="card-title">Temperatura de Hoje <span>| <span id="filter-option">Maior</span></span></h5>
+                    <h5 class="card-title">Temperatura de Hoje <span>| <span id="filter-option">Maior</span> |</span></h5>
 
 
                     <div class="d-flex align-items-center">
@@ -248,7 +248,7 @@ $(document).ready(function() {
                 </div>
 
                 <div class="card-body">
-                    <h5 class="card-title">Temperatura do Mês <span>| <span id="filtroOp2">Maior</span>  <span>@if ($selectedAnoMes)
+                    <h5 class="card-title">Temperatura do Mês <span>| <span id="filtroOp2">Maior</span>  |<span>@if ($selectedAnoMes)
                         {{ \Carbon\Carbon::createFromFormat('Y-m', $selectedAnoMes)->format('F Y') }}
                     @else
 
