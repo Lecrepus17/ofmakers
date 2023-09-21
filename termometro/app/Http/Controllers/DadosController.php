@@ -8,6 +8,84 @@ use Carbon\Carbon;
 
 class DadosController extends Controller
 {
+    public function dados($ano, $mes) {
+        $data = [];
+
+        $data['tempMaxMonth'] = Dado::whereYear('tempo', '=', $ano)
+            ->whereMonth('tempo', '=', $mes)
+            ->max('temperatura');
+        $data['umidMaxMonth'] = Dado::whereYear('tempo', '=', $ano)
+            ->whereMonth('tempo', '=', $mes)
+            ->max('umidade');
+
+        $data['tempMinMonth'] = Dado::whereYear('tempo', '=', $ano)
+            ->whereMonth('tempo', '=', $mes)
+            ->min('temperatura');
+        $data['umidMinMonth'] = Dado::whereYear('tempo', '=', $ano)
+            ->whereMonth('tempo', '=', $mes)
+            ->min('umidade');
+
+        $data['tempAvgMonth'] = number_format(
+            Dado::whereYear('tempo', '=', $ano)
+                ->whereMonth('tempo', '=', $mes)
+                ->avg('temperatura'),
+            2
+        );
+        $data['umidAvgMonth'] = number_format(
+            Dado::whereYear('tempo', '=', $ano)
+                ->whereMonth('tempo', '=', $mes)
+                ->avg('umidade'),
+            2
+        );
+        $dadosUltimos30Dias = Dado::whereYear('tempo', $ano)
+        ->whereMonth('tempo', $mes)
+        ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
+        ->groupBy('data')
+        ->get();
+        $data['temperaturasMonth'] = collect($dadosUltimos30Dias)->pluck('temperatura_media')->map(function ($value) {
+            return number_format($value, 1);
+        });
+
+        $data['tempoMonth'] = collect($dadosUltimos30Dias)->pluck('data');
+        return $data;
+    }
+    public function dados2() {
+        $data = [];
+
+        $data['tempMaxMonth'] = Dado::whereMonth('tempo', '=', date('m'))->max('temperatura');
+        $data['umidMaxMonth'] = Dado::whereMonth('tempo', '=', date('m'))->max('umidade');
+
+        $data['tempMinMonth'] = Dado::whereMonth('tempo', '=', date('m'))->min('temperatura');
+        $data['umidMinMonth'] = Dado::whereMonth('tempo', '=', date('m'))->min('umidade');
+
+        $data['tempAvgMonth'] = number_format(Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura'), 2);
+        $data['umidAvgMonth'] = number_format(Dado::whereMonth('tempo', '=', date('m'))->avg('umidade'), 2);
+
+        $dadosUltimos30Dias = $this->ultimosdias();
+        $data['temperaturasMonth'] = collect($dadosUltimos30Dias)->pluck('temperatura_media')->map(function ($value) {
+            return number_format($value, 1);
+        });
+        $data['umidadeMonth'] = collect($dadosUltimos30Dias)->pluck('umidade_media')->map(function ($value) {
+            return number_format($value, 1);
+        });
+        $data['tempoMonth'] = collect($dadosUltimos30Dias)->pluck('data');
+
+        return $data;
+    }
+    public function dados3(){
+
+    }
+    public function ultimosdias(){
+        $dataAtual = Carbon::now()->format('Y-m-d');
+            // Obter a data de 15 dias atrás a partir de hoje
+            $dataLimiteInferior = Carbon::now()->subDays(30)->format('Y-m-d');
+            // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
+            $dadosUltimos30Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
+                        ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
+                        ->groupBy('data')
+                        ->get();
+            return $dadosUltimos30Dias;
+    }
 
     public function index(Request $request){
 
@@ -18,55 +96,12 @@ class DadosController extends Controller
             $anoMes = $request->input('ano_mes');
             list($ano, $mes) = explode('-', $anoMes);
             if ($mes != 0){
-            //$mes = $request->input('mes');
-            //$ano = $request->input('ano');
-            // Fazer a consulta usando whereBetween para obter os dados do mês e ano especificados
-            $dadosUltimos30Dias = Dado::whereYear('tempo', $ano)
-                ->whereMonth('tempo', $mes)
-                ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
-                ->groupBy('data')
-                ->get();
-            $tempMaxMonth = Dado::whereMonth('tempo', '=', $mes)->max('temperatura');
-            $umidMaxMonth = Dado::whereMonth('tempo', '=', $mes)->max('umidade');
-
-            $tempMinMonth = Dado::whereMonth('tempo', '=', $mes)->min('temperatura');
-            $umidMinMonth = Dado::whereMonth('tempo', '=', $mes)->min('umidade');
-
-            $tempAvgMonth = number_format(Dado::whereMonth('tempo', '=', $mes)->avg('temperatura'), 2);
-            $umidAvgMonth = number_format(Dado::whereMonth('tempo', '=', $mes)->avg('umidade'), 2);
+                $data = $this->dados($ano, $mes);
             }else{
-                // Obter a data de 15 dias atrás a partir de hoje
-                $dataLimiteInferior = Carbon::now()->subDays(30)->format('Y-m-d');
-                // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
-                $dadosUltimos30Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
-                            ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
-                            ->groupBy('data')
-                            ->get();
-            $tempMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('temperatura');
-            $umidMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('umidade');
-
-            $tempMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('temperatura');
-            $umidMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('umidade');
-
-            $tempAvgMonth = number_format(Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura'), 2);
-            $umidAvgMonth = number_format(Dado::whereMonth('tempo', '=', date('m'))->avg('umidade'), 2);
+                $data = $this->dados2();
             }
         } else {
-        // Obter a data de 15 dias atrás a partir de hoje
-        $dataLimiteInferior = Carbon::now()->subDays(30)->format('Y-m-d');
-        // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
-        $dadosUltimos30Dias = Dado::whereBetween('tempo', [$dataLimiteInferior, $dataAtual])
-            ->selectRaw('DATE(tempo) as data, AVG(temperatura) as temperatura_media, AVG(umidade) as umidade_media')
-            ->groupBy('data')
-            ->get();
-            $tempMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('temperatura');
-            $umidMaxMonth = Dado::whereMonth('tempo', '=', date('m'))->max('umidade');
-
-            $tempMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('temperatura');
-            $umidMinMonth = Dado::whereMonth('tempo', '=', date('m'))->min('umidade');
-
-            $tempAvgMonth = number_format(Dado::whereMonth('tempo', '=', date('m'))->avg('temperatura'), 2);
-            $umidAvgMonth = number_format(Dado::whereMonth('tempo', '=', date('m'))->avg('umidade'), 2);
+            $data = $this->dados2();
     }
 
 
@@ -81,28 +116,12 @@ class DadosController extends Controller
     $umidadeAtual = Dado::orderBy('tempo', 'desc')->limit(1)->first();
 
 
-
-
-
-
-
-
     $temperaturaNow =  $temperaturaAtual->temperatura;
     $umidadeNow =  $umidadeAtual->umidade;
 
     $temperaturasToday = collect($resposta)->pluck('temperatura');
     $umidadeToday = collect($resposta)->pluck('umidade');
     $tempoToday = collect($resposta)->pluck('tempo');
-
-
-    $temperaturasMonth = collect($dadosUltimos30Dias)->pluck('temperatura_media')->map(function ($value) {
-        return number_format($value, 1);
-    });
-
-    $umidadeMonth = collect($dadosUltimos30Dias)->pluck('umidade_media')->map(function ($value) {
-        return number_format($value, 1);
-    });
-    $tempoMonth = collect($dadosUltimos30Dias)->pluck('data');
 
 
     $tempMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('temperatura');
@@ -117,13 +136,24 @@ class DadosController extends Controller
     $mesesAnos = Dado::select(Dado::raw('YEAR(tempo) as ano, MONTH(tempo) as mes'))
     ->groupBy('ano', 'mes')
     ->orderBy('ano', 'desc') // Opcional: ordene por ano decrescente para exibir os anos mais recentes primeiro
+    ->orderBy('mes', 'desc') // Opcional: ordene por ano decrescente para exibir os anos mais recentes primeiro
     ->get();
+
+    $tempMaxMonth = $tempMinMonth = $tempAvgMonth = $umidMaxMonth = $umidMinMonth = $umidAvgMonth = $temperaturasMonth =  $tempoMonth = null;
+
+
+    foreach ($data as $nomeCampo => $valor) {
+        // Crie uma variável com o mesmo nome do campo e atribua o valor
+        $$nomeCampo = $valor;
+    }
+
+
+
         return view('pagina.index', [
             'tempToday' => $temperaturasToday,
             'umidToday' => $umidadeToday,
             'today' => $tempoToday,
             'tempMonth' => $temperaturasMonth,
-            'umidMonth' => $umidadeMonth,
             'month' => $tempoMonth,
             'umidadeNow' => $umidadeNow,
             'temperaturaNow' => $temperaturaNow,

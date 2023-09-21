@@ -14,7 +14,6 @@ use App\Http\Controllers\DadosController;
 */
 
 Route::get('/', [DadosController::class, 'index']);
-
 Route::get('/index', [DadosController::class, 'index'])->name('index');
 Route::post('/index', [DadosController::class, 'index']);
 Route::get('/delete/{dado}', [DadosController::class, 'delete'])->name('delete');
