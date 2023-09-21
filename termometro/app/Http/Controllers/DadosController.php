@@ -8,7 +8,7 @@ use Carbon\Carbon;
 
 class DadosController extends Controller
 {
-    public function dados($ano, $mes) {
+    public function mes_post($ano, $mes) {
         $data = [];
 
         $data['tempMaxMonth'] = Dado::whereYear('tempo', '=', $ano)
@@ -49,7 +49,7 @@ class DadosController extends Controller
         $data['tempoMonth'] = collect($dadosUltimos30Dias)->pluck('data');
         return $data;
     }
-    public function dados2() {
+    public function mes_get() {
         $data = [];
 
         $data['tempMaxMonth'] = Dado::whereMonth('tempo', '=', date('m'))->max('temperatura');
@@ -72,8 +72,54 @@ class DadosController extends Controller
 
         return $data;
     }
-    public function dados3(){
+    public function dia_get(){
+    // Obter a data atual
+    $dataAtual = Carbon::now()->format('Y-m-d');
+    // Fazer a consulta usando whereDate para obter os dados do dia atual
+    $graficoDia = Dado::whereDate('tempo', '=', $dataAtual)->get();
 
+    // Converter o resultado para um array associativo
+    $resposta = json_decode($graficoDia, true);
+
+
+    $data['temperaturasToday'] = collect($resposta)->pluck('temperatura');
+    $data['umidadeToday'] = collect($resposta)->pluck('umidade');
+    $data['tempoToday'] = collect($resposta)->pluck('tempo');
+
+
+    $data['tempMaxToday'] = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('temperatura');
+    $data['umidMaxToday'] = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('umidade');
+
+    $data['tempMinToday'] = Dado::whereDate('tempo', '=', date('Y-m-d'))->min('temperatura');
+    $data['umidMinToday'] = Dado::whereDate('tempo', '=', date('Y-m-d'))->min('umidade');
+
+    $data['tempAvgToday'] = number_format(Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('temperatura'), 2);
+    $data['umidAvgToday'] = number_format(Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('umidade'), 2);
+
+
+    return $data;
+    }
+    public function dia_post($dia){
+    // Fazer a consulta usando whereDate para obter os dados do dia especificado
+    $graficoDia = Dado::whereDate('tempo', '=', $dia)->get();
+
+    // Converter o resultado para um array associativo
+    $resposta = json_decode($graficoDia, true);
+
+    $data['temperaturasToday'] = collect($resposta)->pluck('temperatura');
+    $data['umidadeToday'] = collect($resposta)->pluck('umidade');
+    $data['tempoToday'] = collect($resposta)->pluck('tempo');
+
+    $data['tempMaxToday'] = Dado::whereDate('tempo', '=', $dia)->max('temperatura');
+    $data['umidMaxToday'] = Dado::whereDate('tempo', '=', $dia)->max('umidade');
+
+    $data['tempMinToday'] = Dado::whereDate('tempo', '=', $dia)->min('temperatura');
+    $data['umidMinToday'] = Dado::whereDate('tempo', '=', $dia)->min('umidade');
+
+    $data['tempAvgToday'] = number_format(Dado::whereDate('tempo', '=', $dia)->avg('temperatura'), 2);
+    $data['umidAvgToday'] = number_format(Dado::whereDate('tempo', '=', $dia)->avg('umidade'), 2);
+
+    return $data;
     }
     public function ultimosdias(){
         $dataAtual = Carbon::now()->format('Y-m-d');
@@ -89,56 +135,45 @@ class DadosController extends Controller
 
     public function index(Request $request){
 
-    // Obter a data atual
-    $dataAtual = Carbon::now()->format('Y-m-d');
+
 
         if ($request->isMethod('POST')){
             $anoMes = $request->input('ano_mes');
+            $dia = $request->input('dia');
             list($ano, $mes) = explode('-', $anoMes);
-            if ($mes != 0){
-                $data = $this->dados($ano, $mes);
+            if ($mes != null){
+                $data = $this->mes_post($ano, $mes);
             }else{
-                $data = $this->dados2();
+                $data = $this->mes_get();
+            }
+            if ($dia != null){
+                $data2 = $this->dia_post($dia);
+            }else{
+                $data2 = $this->dia_get();
             }
         } else {
-            $data = $this->dados2();
+            $data = $this->mes_get();
+            $data2 = $this->dia_get();
     }
 
 
 
-    // Fazer a consulta usando whereDate para obter os dados do dia atual
-    $graficoDia = Dado::whereDate('tempo', '=', $dataAtual)->get();
 
-    // Converter o resultado para um array associativo
-    $resposta = json_decode($graficoDia, true);
 
     $temperaturaAtual = Dado::orderBy('tempo', 'desc')->limit(1)->first();
-    $umidadeAtual = Dado::orderBy('tempo', 'desc')->limit(1)->first();
 
 
     $temperaturaNow =  $temperaturaAtual->temperatura;
-    $umidadeNow =  $umidadeAtual->umidade;
-
-    $temperaturasToday = collect($resposta)->pluck('temperatura');
-    $umidadeToday = collect($resposta)->pluck('umidade');
-    $tempoToday = collect($resposta)->pluck('tempo');
+    $umidadeNow =  $temperaturaAtual->umidade;
 
 
-    $tempMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('temperatura');
-    $umidMaxToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->max('umidade');
-
-    $tempMinToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->min('temperatura');
-    $umidMinToday = Dado::whereDate('tempo', '=', date('Y-m-d'))->min('umidade');
-
-    $tempAvgToday = number_format(Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('temperatura'), 2);
-    $umidAvgToday = number_format(Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('umidade'), 2);
 
     $mesesAnos = Dado::select(Dado::raw('YEAR(tempo) as ano, MONTH(tempo) as mes'))
     ->groupBy('ano', 'mes')
     ->orderBy('ano', 'desc') // Opcional: ordene por ano decrescente para exibir os anos mais recentes primeiro
     ->orderBy('mes', 'desc') // Opcional: ordene por ano decrescente para exibir os anos mais recentes primeiro
     ->get();
-
+    $temperaturasToday = $umidadeToday = $tempoToday = $tempMaxToday = $umidMaxToday = $tempMinToday = $umidMinToday = $tempAvgToday = $umidAvgToday = null;
     $tempMaxMonth = $tempMinMonth = $tempAvgMonth = $umidMaxMonth = $umidMinMonth = $umidAvgMonth = $temperaturasMonth =  $tempoMonth = null;
 
 
@@ -146,7 +181,10 @@ class DadosController extends Controller
         // Crie uma variável com o mesmo nome do campo e atribua o valor
         $$nomeCampo = $valor;
     }
-
+    foreach ($data2 as $nomeCampo => $valor) {
+        // Crie uma variável com o mesmo nome do campo e atribua o valor
+        $$nomeCampo = $valor;
+    }
 
 
         return view('pagina.index', [
@@ -194,7 +232,7 @@ class DadosController extends Controller
                 $ord = $request->ord == 'desc' ? 'desc' : 'asc';
                 $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
             }elseif($ord != null){
-                $dados = Dado::orderBy('tempo', $ord)->get();
+                $dados = Dado::orderBy('tempo', $ord)->paginate();
             }
             else{
                 $dados = Dado::orderBy('tempo', 'desc')->paginate();

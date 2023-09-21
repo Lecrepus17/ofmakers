@@ -59,7 +59,7 @@
         <div class="form-container">
             <form method="POST" action="{{ route('index') }}">
                 @csrf
-                <input type="date" name="busca" id="pesquisaData">
+                <input type="date" name="dia" id="pesquisaData">
                 <select name="ano_mes" id="ano_mes" class="select-box">
                     @foreach ($mesesAnos as $mesAno)
                         <option value="{{ $mesAno->ano }}-{{ str_pad($mesAno->mes, 2, '0', STR_PAD_LEFT) }}"
@@ -75,7 +75,7 @@
             </form>
             <form method="GET" action="{{ route('index') }}">
                 @csrf
-                <input type="submit" class="submit-button" value="Últimos 30 dias">
+                <input type="submit" class="submit-button" value="Últimos 30 dias e dia atual">
             </form>
         </div>
 
