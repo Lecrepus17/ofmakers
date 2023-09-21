@@ -74,7 +74,7 @@
       <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{Route('index')}}">Home</a></li>
-            <li class="breadcrumb-item active"><a href="{{Route('listagem')}}">Listagem</a></li>
+            <li class="breadcrumb-item active"><b><a href="{{Route('listagem')}}">Listagem</a></b></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

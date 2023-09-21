@@ -98,7 +98,7 @@
       <h1>Estação metereológica</h1>
       <nav>
         <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{Route('index')}}">Home /</a></li>
+        <li class="breadcrumb-item"><b><a href="{{Route('index')}}">Home</a></b></li>
          <li class="breadcrumb-item active"><a href="{{Route('listagem')}}"> Listagem</a></li>
         </ol>
       </nav>
