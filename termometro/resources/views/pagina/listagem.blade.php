@@ -100,10 +100,9 @@
               <input type="submit" value="Pesquisar">
           </form>
 
-          <form method="GET" action="{{ route('listagem') }}">
-              @csrf
+          <a href="{{ route('listagem') }}">
               <input type="submit" value="Paginado">
-          </form>
+          </a>
       </div>
 
         <table class="table ">

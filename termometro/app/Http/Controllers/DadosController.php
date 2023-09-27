@@ -9,7 +9,6 @@ use Carbon\Carbon;
 class DadosController extends Controller
 {
     public function mes_post($ano, $mes) {
-        $data = [];
 
         $data['tempMaxMonth'] = Dado::whereYear('tempo', '=', $ano)
             ->whereMonth('tempo', '=', $mes)
@@ -50,7 +49,6 @@ class DadosController extends Controller
         return $data;
     }
     public function mes_get() {
-        $data = [];
 
         $data['tempMaxMonth'] = Dado::whereMonth('tempo', '=', date('m'))->max('temperatura');
         $data['umidMaxMonth'] = Dado::whereMonth('tempo', '=', date('m'))->max('umidade');
@@ -81,7 +79,6 @@ class DadosController extends Controller
     // Converter o resultado para um array associativo
     $resposta = json_decode($graficoDia, true);
 
-
     $data['temperaturasToday'] = collect($resposta)->pluck('temperatura');
     $data['umidadeToday'] = collect($resposta)->pluck('umidade');
     $data['tempoToday'] = collect($resposta)->pluck('tempo');
@@ -95,7 +92,6 @@ class DadosController extends Controller
 
     $data['tempAvgToday'] = number_format(Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('temperatura'), 2);
     $data['umidAvgToday'] = number_format(Dado::whereDate('tempo', '=', date('Y-m-d'))->avg('umidade'), 2);
-
 
     return $data;
     }
@@ -140,8 +136,8 @@ class DadosController extends Controller
         if ($request->isMethod('POST')){
             $anoMes = $request->input('ano_mes');
             $dia = $request->input('dia');
+            if ($anoMes != ''){
             list($ano, $mes) = explode('-', $anoMes);
-            if ($mes != null){
                 $data = $this->mes_post($ano, $mes);
             }else{
                 $data = $this->mes_get();
@@ -181,9 +177,11 @@ class DadosController extends Controller
         // Crie uma variável com o mesmo nome do campo e atribua o valor
         $$nomeCampo = $valor;
     }
+
     foreach ($data2 as $nomeCampo => $valor) {
         // Crie uma variável com o mesmo nome do campo e atribua o valor
         $$nomeCampo = $valor;
+
     }
 
 
@@ -209,6 +207,7 @@ class DadosController extends Controller
             'umidAvgMonth' => $umidAvgMonth,
             'mesesAnos' => $mesesAnos,
             'selectedAnoMes' => request('ano_mes'),
+            'selectedDia' => request('dia'),
         ]);}
     // mostra mais especifica de datas
     public function view(Dado $dado){

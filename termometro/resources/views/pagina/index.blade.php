@@ -59,7 +59,7 @@
         <div class="form-container">
             <form method="POST" action="{{ route('index') }}">
                 @csrf
-                <input type="date" name="dia" id="pesquisaData">
+                <input type="date" name="dia" id="pesquisaData" value="{{ old('dia', $selectedDia) }}">
                 <select name="ano_mes" id="ano_mes" class="select-box">
                     <option value="">Selecione o mês</option> <!-- Opção vazia -->
                     @foreach ($mesesAnos as $mesAno)
@@ -74,9 +74,9 @@
                 </select>
                 <input type="submit" value="Enviar">
             </form>
-            <form method="GET" action="{{ route('index') }}">
-                @csrf
+               <a href="{{ route('index') }}">
                 <input type="submit" class="submit-button" value="Últimos 30 dias e dia atual">
+            </a>
             </form>
         </div>
 
@@ -210,7 +210,12 @@ $(document).ready(function() {
                   </div>
 
                   <div class="card-body">
-                    <h5 class="card-title">Temperatura de Hoje <span>| <span id="filter-option">Maior</span> |</span></h5>
+                    <h5 class="card-title">Temperatura de Hoje <span>| <span id="filter-option">Maior</span> |</span><span>
+                        @if ($selectedDia )
+                        {{ \Carbon\Carbon::createFromFormat('Y-m-d', $selectedDia)->locale('pt_BR')->isoFormat('D [de] MMMM [de] YYYY') }}
+                        @else
+                        Hoje
+                    @endif</span></h5>
 
 
                     <div class="d-flex align-items-center">
@@ -249,10 +254,11 @@ $(document).ready(function() {
                 </div>
 
                 <div class="card-body">
-                    <h5 class="card-title">Temperatura do Mês <span>| <span id="filtroOp2">Maior</span>  |<span>@if ($selectedAnoMes)
-                        {{ \Carbon\Carbon::createFromFormat('Y-m', $selectedAnoMes)->format('F Y') }}
+                    <h5 class="card-title">Temperatura do Mês <span>| <span id="filtroOp2">Maior</span>  |<span>
+                        @if ($selectedAnoMes)
+                        {{ \Carbon\Carbon::createFromFormat('Y-m', $selectedAnoMes)->locale('pt_BR')->isoFormat('MMMM [de] YYYY') }}
                     @else
-
+                        Últimos 30 dias
                     @endif</span>
                         </span>
                         </h5>
@@ -311,7 +317,12 @@ $(document).ready(function() {
       <!-- ... (código para o filtro) ... -->
 
       <div class="card-body">
-        <h5 class="card-title">Gráfico<span> / Hoje</span></h5>
+        <h5 class="card-title">Gráfico<span> /
+            @if ($selectedDia )
+            {{ \Carbon\Carbon::createFromFormat('Y-m-d', $selectedDia)->locale('pt_BR')->isoFormat('D [de] MMMM [de] YYYY') }}
+            @else
+            Hoje
+        @endif</span></h5>
 
         <!-- Line Chart 1 -->
         <div id="reportsChart1"></div>
@@ -386,12 +397,13 @@ $(document).ready(function() {
   <div class="col-lg-12">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Gráfico<span> / @if ($selectedAnoMes)
-            {{ \Carbon\Carbon::createFromFormat('Y-m', $selectedAnoMes)->format('F Y') }}
-        @else
-            Mês
-        @endif</span></h5>
-
+        <h5 class="card-title">Gráfico<span> /
+            @if ($selectedAnoMes)
+                {{ \Carbon\Carbon::createFromFormat('Y-m', $selectedAnoMes)->locale('pt_BR')->isoFormat('MMMM [de] YYYY') }}
+            @else
+                Últimos 30 dias
+            @endif
+        </span></h5>
 
         <!-- Line Chart -->
         <div id="lineChart">
