@@ -247,8 +247,8 @@ $(document).ready(function() {
                     </li>
 
                     <li><a class="dropdown-item-month custom-item" href="#" data-target2="maior">Maior</a></li>
-                      <li><a class="dropdown-item-month custom-item" href="#" data-target2="menor">Menor</a></li>
-                      <li><a class="dropdown-item-month custom-item" href="#" data-target2="media">Média</a></li>
+                    <li><a class="dropdown-item-month custom-item" href="#" data-target2="menor">Menor</a></li>
+                    <li><a class="dropdown-item-month custom-item" href="#" data-target2="media">Média</a></li>
                   </ul>
                 </div>
 
