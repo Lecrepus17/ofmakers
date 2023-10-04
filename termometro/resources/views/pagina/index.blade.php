@@ -197,14 +197,14 @@ $(document).ready(function() {
 
                 <div class="filter">
                     <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow custom-menu">
                       <li class="dropdown-header text-start">
                         <h6>Filtro</h6>
                       </li>
 
-                      <li><a class="dropdown-item" href="#" data-target="maior">Maior</a></li>
-                      <li><a class="dropdown-item" href="#" data-target="menor">Menor</a></li>
-                      <li><a class="dropdown-item" href="#" data-target="media">Média</a></li>
+                      <li><a class="dropdown-item custom-item" href="#" data-target="maior">Maior</a></li>
+                      <li><a class="dropdown-item custom-item" href="#" data-target="menor">Menor</a></li>
+                      <li><a class="dropdown-item custom-item" href="#" data-target="media">Média</a></li>
                     </ul>
                   </div>
 
@@ -241,14 +241,14 @@ $(document).ready(function() {
 
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow custom-menu">
                     <li class="dropdown-header text-start">
                       <h6>Filtro</h6>
                     </li>
 
-                    <li><a class="dropdown-item-month" href="#" data-target2="maior">Maior</a></li>
-                      <li><a class="dropdown-item-month" href="#" data-target2="menor">Menor</a></li>
-                      <li><a class="dropdown-item-month" href="#" data-target2="media">Média</a></li>
+                    <li><a class="dropdown-item-month custom-item" href="#" data-target2="maior">Maior</a></li>
+                      <li><a class="dropdown-item-month custom-item" href="#" data-target2="menor">Menor</a></li>
+                      <li><a class="dropdown-item-month custom-item" href="#" data-target2="media">Média</a></li>
                   </ul>
                 </div>
 
