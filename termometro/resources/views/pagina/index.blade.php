@@ -28,7 +28,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/estilo.css" rel="stylesheet">
 
 
   <!-- =======================================================
@@ -254,12 +253,12 @@ $(document).ready(function() {
                 </div>
 
                 <div class="card-body">
-                    <h5 class="card-title">Temperatura do Mês <span>| <span id="filtroOp2">Maior</span>  |<span>
+                    <h5 class="card-title">Temperatura do Mês <span>| <span id="filtroOp2">Maior</span>  |</span><span>
                         @if ($selectedAnoMes)
                         {{ \Carbon\Carbon::createFromFormat('Y-m', $selectedAnoMes)->locale('pt_BR')->isoFormat('MMMM [de] YYYY') }}
                     @else
-                        Últimos 30 dias
-                    @endif</span>
+                        Mês Atual
+                    @endif
                         </span>
                         </h5>
 
