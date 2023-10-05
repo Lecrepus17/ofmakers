@@ -8,6 +8,106 @@ use Carbon\Carbon;
 
 class DadosController extends Controller
 {
+    public function index(Request $request){
+        if ($request->isMethod('POST')){
+            $anoMes = $request->input('ano_mes');
+            $dia = $request->input('dia');
+            if ($anoMes != ''){
+            list($ano, $mes) = explode('-', $anoMes);
+                $data = $this->mes_post($ano, $mes);
+            }else{
+                $data = $this->mes_get();
+            }
+            if ($dia != null){
+                $data2 = $this->dia_post($dia);
+            }else{
+                $data2 = $this->dia_get();
+            }
+        } else {
+            $data = $this->mes_get();
+            $data2 = $this->dia_get();
+    }
+
+    $temperaturaAtual = Dado::orderBy('tempo', 'desc')->limit(1)->first();
+
+    $temperaturaNow =  $temperaturaAtual->temperatura;
+    $umidadeNow =  $temperaturaAtual->umidade;
+
+    $mesesAnos = Dado::select(Dado::raw('YEAR(tempo) as ano, MONTH(tempo) as mes'))
+    ->groupBy('ano', 'mes')
+    ->orderBy('ano', 'desc') // Opcional: ordene por ano decrescente para exibir os anos mais recentes primeiro
+    ->orderBy('mes', 'desc') // Opcional: ordene por ano decrescente para exibir os anos mais recentes primeiro
+    ->get();
+    $temperaturasToday = $umidadeToday = $tempoToday = $tempMaxToday = $umidMaxToday = $tempMinToday = $umidMinToday = $tempAvgToday = $umidAvgToday = null;
+    $tempMaxMonth = $tempMinMonth = $tempAvgMonth = $umidMaxMonth = $umidMinMonth = $umidAvgMonth = $temperaturasMonth =  $tempoMonth = null;
+
+    foreach ($data as $nomeCampo => $valor) {
+        // Crie uma variável com o mesmo nome do campo e atribua o valor
+        $$nomeCampo = $valor;
+    }
+
+    foreach ($data2 as $nomeCampo => $valor) {
+        // Crie uma variável com o mesmo nome do campo e atribua o valor
+        $$nomeCampo = $valor;
+
+    }
+
+        return view('pagina.index', [
+            'tempToday' => $temperaturasToday,
+            'umidToday' => $umidadeToday,
+            'today' => $tempoToday,
+            'tempMonth' => $temperaturasMonth,
+            'month' => $tempoMonth,
+            'umidadeNow' => $umidadeNow,
+            'temperaturaNow' => $temperaturaNow,
+            'tempMaxToday' => $tempMaxToday,
+            'tempMinToday' => $tempMinToday,
+            'tempAvgToday' => $tempAvgToday,
+            'tempMaxMonth' => $tempMaxMonth,
+            'tempMinMonth' => $tempMinMonth,
+            'tempAvgMonth' => $tempAvgMonth,
+            'umidMaxToday' => $umidMaxToday,
+            'umidMinToday' => $umidMinToday,
+            'umidAvgToday' => $umidAvgToday,
+            'umidMaxMonth' => $umidMaxMonth,
+            'umidMinMonth' => $umidMinMonth,
+            'umidAvgMonth' => $umidAvgMonth,
+            'mesesAnos' => $mesesAnos,
+            'selectedAnoMes' => request('ano_mes'),
+            'selectedDia' => request('dia'),
+        ]);}
+
+
+    // caso realmente precise deletar
+    public function delete(Dado $dado){
+        $dado->delete();
+        return redirect()->route('listagem')->with('sucesso', 'Dado deletado com sucesso!');
+    }
+
+
+    public function listagem(Request $request){
+        if ($request->isMethod('POST')){
+            $busca = $request->busca;
+            $ord = $request->ord;
+            if ($busca != null){
+                $ord = $request->ord == 'desc' ? 'desc' : 'asc';
+                $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
+            }elseif($ord != null){
+                $dados = Dado::orderBy('tempo', $ord)->paginate();
+            }
+            else{
+                $dados = Dado::orderBy('tempo', 'desc')->paginate();
+            }
+        } else {
+            $dados = Dado::orderBy('tempo', 'desc')->paginate();
+        }
+        return view('pagina.listagem',[
+            'dados' => $dados,
+        ]);
+    }
+
+
+
     public function mes_post($ano, $mes) {
 
         $data['tempMaxMonth'] = Dado::whereYear('tempo', '=', $ano)
@@ -129,120 +229,6 @@ class DadosController extends Controller
             return $dadosUltimos30Dias;
     }
 
-    public function index(Request $request){
-
-
-
-        if ($request->isMethod('POST')){
-            $anoMes = $request->input('ano_mes');
-            $dia = $request->input('dia');
-            if ($anoMes != ''){
-            list($ano, $mes) = explode('-', $anoMes);
-                $data = $this->mes_post($ano, $mes);
-            }else{
-                $data = $this->mes_get();
-            }
-            if ($dia != null){
-                $data2 = $this->dia_post($dia);
-            }else{
-                $data2 = $this->dia_get();
-            }
-        } else {
-            $data = $this->mes_get();
-            $data2 = $this->dia_get();
-    }
-
-
-
-
-
-    $temperaturaAtual = Dado::orderBy('tempo', 'desc')->limit(1)->first();
-
-
-    $temperaturaNow =  $temperaturaAtual->temperatura;
-    $umidadeNow =  $temperaturaAtual->umidade;
-
-
-
-    $mesesAnos = Dado::select(Dado::raw('YEAR(tempo) as ano, MONTH(tempo) as mes'))
-    ->groupBy('ano', 'mes')
-    ->orderBy('ano', 'desc') // Opcional: ordene por ano decrescente para exibir os anos mais recentes primeiro
-    ->orderBy('mes', 'desc') // Opcional: ordene por ano decrescente para exibir os anos mais recentes primeiro
-    ->get();
-    $temperaturasToday = $umidadeToday = $tempoToday = $tempMaxToday = $umidMaxToday = $tempMinToday = $umidMinToday = $tempAvgToday = $umidAvgToday = null;
-    $tempMaxMonth = $tempMinMonth = $tempAvgMonth = $umidMaxMonth = $umidMinMonth = $umidAvgMonth = $temperaturasMonth =  $tempoMonth = null;
-
-
-    foreach ($data as $nomeCampo => $valor) {
-        // Crie uma variável com o mesmo nome do campo e atribua o valor
-        $$nomeCampo = $valor;
-    }
-
-    foreach ($data2 as $nomeCampo => $valor) {
-        // Crie uma variável com o mesmo nome do campo e atribua o valor
-        $$nomeCampo = $valor;
-
-    }
-
-
-        return view('pagina.index', [
-            'tempToday' => $temperaturasToday,
-            'umidToday' => $umidadeToday,
-            'today' => $tempoToday,
-            'tempMonth' => $temperaturasMonth,
-            'month' => $tempoMonth,
-            'umidadeNow' => $umidadeNow,
-            'temperaturaNow' => $temperaturaNow,
-            'tempMaxToday' => $tempMaxToday,
-            'tempMinToday' => $tempMinToday,
-            'tempAvgToday' => $tempAvgToday,
-            'tempMaxMonth' => $tempMaxMonth,
-            'tempMinMonth' => $tempMinMonth,
-            'tempAvgMonth' => $tempAvgMonth,
-            'umidMaxToday' => $umidMaxToday,
-            'umidMinToday' => $umidMinToday,
-            'umidAvgToday' => $umidAvgToday,
-            'umidMaxMonth' => $umidMaxMonth,
-            'umidMinMonth' => $umidMinMonth,
-            'umidAvgMonth' => $umidAvgMonth,
-            'mesesAnos' => $mesesAnos,
-            'selectedAnoMes' => request('ano_mes'),
-            'selectedDia' => request('dia'),
-        ]);}
-    // mostra mais especifica de datas
-    public function view(Dado $dado){
-        return view('Dados.view',[
-            'dado' => $dado
-        ]);
-    }
-
-    // caso realmente precise deletar
-    public function delete(Dado $dado){
-        $dado->delete();
-        return redirect()->route('listagem')->with('sucesso', 'Dado deletado com sucesso!');
-    }
-
-
-    public function listagem(Request $request){
-        if ($request->isMethod('POST')){
-            $busca = $request->busca;
-            $ord = $request->ord;
-            if ($busca != null){
-                $ord = $request->ord == 'desc' ? 'desc' : 'asc';
-                $dados = Dado::whereDate('tempo', '=',$busca)->orderBy('tempo', $ord)->get();
-            }elseif($ord != null){
-                $dados = Dado::orderBy('tempo', $ord)->paginate();
-            }
-            else{
-                $dados = Dado::orderBy('tempo', 'desc')->paginate();
-            }
-        } else {
-            $dados = Dado::orderBy('tempo', 'desc')->paginate();
-        }
-        return view('pagina.listagem',[
-            'dados' => $dados,
-        ]);
-    }
 }
 
 

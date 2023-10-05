@@ -30,3 +30,5 @@ reinicie o apache
 
 php artisan migrate:rollback
 php artisan migrate --seed
+
+php artisan serve --host=192.168.1.49
