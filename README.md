@@ -1,7 +1,7 @@
 # ofmakers
 ssh -L 3307:localhost:3306 ofmakers@192.168.101.55
 sudo /opt/lampp/xampp start apache  
-
+https://pt.scribd.com/presentation/402567686/Diagrama-MVC-Laravel
 php artisan vendor:publish --tag=laravel-pagination
 
 composer require realrashid/sweet-alert
