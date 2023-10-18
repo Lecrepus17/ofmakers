@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-18T17:37:08.793Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/117.0" etag="yWpyl9fVXgupb-QgVxy3" version="22.0.4" type="device">
+<mxfile host="app.diagrams.net" modified="2023-10-18T17:40:40.844Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/116.0" etag="YHBZPsapZBo4ZOY8rktL" version="22.0.4" type="github">
   <diagram name="Página-1" id="txFkV5qtQ6-GotB8eZur">
-    <mxGraphModel dx="1364" dy="795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="822" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -8,7 +8,7 @@
           <mxGeometry x="50" y="60" width="710" height="710" as="geometry" />
         </mxCell>
         <mxCell id="Tcr9Ncec1bthyELoQFyk-23" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;direction=south;" parent="1" vertex="1">
-          <mxGeometry x="110" y="255" width="200" height="200" as="geometry" />
+          <mxGeometry x="95" y="255" width="200" height="200" as="geometry" />
         </mxCell>
         <mxCell id="Tcr9Ncec1bthyELoQFyk-1" value="Controller" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="440" y="330" width="110" height="50" as="geometry" />
@@ -25,9 +25,9 @@
             <mxPoint x="440" y="390" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Tcr9Ncec1bthyELoQFyk-6" value="Manda as informações" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Tcr9Ncec1bthyELoQFyk-5" vertex="1" connectable="0">
+        <mxCell id="Tcr9Ncec1bthyELoQFyk-6" value="&lt;div&gt;Manda&amp;nbsp;&lt;/div&gt;&lt;div&gt;temperatura e umidade&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Tcr9Ncec1bthyELoQFyk-5" vertex="1" connectable="0">
           <mxGeometry x="0.1799" y="-4" relative="1" as="geometry">
-            <mxPoint x="14" y="-3" as="offset" />
+            <mxPoint x="39" y="3" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Tcr9Ncec1bthyELoQFyk-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Tcr9Ncec1bthyELoQFyk-1" target="Tcr9Ncec1bthyELoQFyk-2" edge="1">
@@ -36,7 +36,7 @@
             <mxPoint x="440" y="390" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Tcr9Ncec1bthyELoQFyk-8" value="Requisita informações" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Tcr9Ncec1bthyELoQFyk-7" vertex="1" connectable="0">
+        <mxCell id="Tcr9Ncec1bthyELoQFyk-8" value="&lt;div&gt;Requisita temperatura&lt;/div&gt;&lt;div&gt;e umidade&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Tcr9Ncec1bthyELoQFyk-7" vertex="1" connectable="0">
           <mxGeometry x="0.3562" y="-3" relative="1" as="geometry">
             <mxPoint x="-4" y="-32" as="offset" />
           </mxGeometry>
@@ -47,9 +47,9 @@
             <mxPoint x="490" y="610" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Tcr9Ncec1bthyELoQFyk-12" value="retorna dados de temperatura e umidade" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Tcr9Ncec1bthyELoQFyk-9" vertex="1" connectable="0">
+        <mxCell id="Tcr9Ncec1bthyELoQFyk-12" value="&lt;div&gt;retorna dados de&amp;nbsp;&lt;/div&gt;&lt;div&gt;temperatura e umidade&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Tcr9Ncec1bthyELoQFyk-9" vertex="1" connectable="0">
           <mxGeometry x="0.1437" y="3" relative="1" as="geometry">
-            <mxPoint x="26" y="-26" as="offset" />
+            <mxPoint x="16" y="-21" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Tcr9Ncec1bthyELoQFyk-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.15;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="Tcr9Ncec1bthyELoQFyk-2" target="Tcr9Ncec1bthyELoQFyk-3" edge="1">
@@ -58,7 +58,7 @@
             <mxPoint x="500" y="620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Tcr9Ncec1bthyELoQFyk-11" value="Pesquisa dos dados" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Tcr9Ncec1bthyELoQFyk-10" vertex="1" connectable="0">
+        <mxCell id="Tcr9Ncec1bthyELoQFyk-11" value="&lt;div&gt;Pesquisa dos dados de&amp;nbsp;&lt;/div&gt;&lt;div&gt;temperatura e umidade&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Tcr9Ncec1bthyELoQFyk-10" vertex="1" connectable="0">
           <mxGeometry x="-0.3899" y="1" relative="1" as="geometry">
             <mxPoint x="32" y="12" as="offset" />
           </mxGeometry>
@@ -83,9 +83,9 @@
             <mxPoint x="337.5" y="220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Tcr9Ncec1bthyELoQFyk-19" value="&lt;div&gt;Acessa uma rota&lt;/div&gt;&lt;div&gt;que direciona para&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Tcr9Ncec1bthyELoQFyk-17" vertex="1" connectable="0">
+        <mxCell id="Tcr9Ncec1bthyELoQFyk-19" value="&lt;div&gt;Acessa uma rota&lt;/div&gt;&lt;div&gt;que direciona para uma&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Tcr9Ncec1bthyELoQFyk-17" vertex="1" connectable="0">
           <mxGeometry x="0.0466" y="-3" relative="1" as="geometry">
-            <mxPoint x="10" y="-3" as="offset" />
+            <mxPoint x="-4" y="-15" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Tcr9Ncec1bthyELoQFyk-25" value="Aplicação rodando no rasp" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
