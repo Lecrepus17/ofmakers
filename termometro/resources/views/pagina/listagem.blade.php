@@ -92,7 +92,7 @@
         <div class="form-container">
           <form method="POST" action="{{ route('listagem') }}">
               @csrf
-              <input type="date" name="busca" id="pesquisaData">
+              <input type="date" name="busca" id="pesquisaData" value="{{ old('dia', $selectedDia) }}">
               <select name="ord">
                   <option value="desc">Decrescente</option>
                   <option value="asc">Crescente</option>
