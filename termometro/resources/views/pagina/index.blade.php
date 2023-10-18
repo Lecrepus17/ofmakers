@@ -329,12 +329,34 @@ $(document).ready(function() {
 
             // Variável PHP com os dados de tempo
             var tempoToday = {!! json_encode($today) !!};
-            // Função para formatar o tempo no formato desejado
-            function formatarTempoParaXAxis(tempo) {
-                return tempo.map(function(element) {
-                return new Date(element).toISOString();
-                });
-            }
+            function formatarTempoParaSaoPaulo(tempo) {
+    // Log dos valores de entrada
+    console.log("Valores de entrada:", tempo);
+
+    const resultado = tempo.map(function(element) {
+        // Log do valor antes da formatação
+        console.log("Valor antes da formatação:", element);
+
+        // Configurar o fuso horário para São Paulo (BRT - Horário de Brasília)
+        const options = { timeZone: 'America/Sao_Paulo' };
+        const dataFormatada = new Intl.DateTimeFormat('en-US', options).format(new Date(element));
+
+        // Log do valor após a formatação
+        console.log("Valor após a formatação:", dataFormatada);
+
+        return dataFormatada;
+    });
+
+    // Log dos valores de saída
+    console.log("Valores de saída:", resultado);
+
+    return resultado;
+}
+
+const tempo = ["2023-10-18T10:00:00", "2023-10-18T11:00:00"];
+formatarTempoParaSaoPaulo(tempo);
+
+
             // Agora, formatamos a variável tempo para o formato desejado
             var tempoFormatado = formatarTempoParaXAxis(tempoToday);
 
