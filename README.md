@@ -32,3 +32,20 @@ php artisan migrate:rollback
 php artisan migrate --seed
 
 php artisan serve --host=192.168.1.49
+
+
+
+
+
+para nomear um ip na maquina local
+
+sudo nano /etc/hosts 
+
+colocar ip e o nome
+192.168.0.250  ofmakers
+
+
+como fazer um ip estático num rasp
+
+sudo nano /etc/dhcpcd.conf
+static ip_address=192.168.0.250/16
