@@ -103,6 +103,7 @@ class DadosController extends Controller
         }
         return view('pagina.listagem',[
             'dados' => $dados,
+            'selectedDia' => request('busca')
         ]);
     }
 
@@ -218,7 +219,7 @@ class DadosController extends Controller
     return $data;
     }
     public function ultimosdias(){
-        $dataAtual = Carbon::now()->format('Y-m-d');
+        $dataAtual = Carbon::now()->addDay()->format('Y-m-d');
             // Obter a data de 15 dias atrás a partir de hoje
             $dataLimiteInferior = Carbon::now()->subDays(30)->format('Y-m-d');
             // Fazer a consulta usando whereBetween para obter os dados dos últimos 15 dias
