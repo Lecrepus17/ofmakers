@@ -1,7 +1,7 @@
 TÓPICOS
 --> Mysql
     - mysql -u root -p 
-    - sudo apt install mysql
+    - sudo apt install phpmyadmin
     - sudo service mysql start
     - sudo service mysql stop
     - sudo mysqld_safe --skip-grant-tables &
