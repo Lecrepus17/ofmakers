@@ -1,15 +1,21 @@
 TÓPICOS
 --> Mysql
-    - 
-    -
+    - mysql -u root -p 
+    - sudo apt install mysql
+    - sudo service mysql start
+    - sudo service mysql stop
+    - sudo mysqld_safe --skip-grant-tables &
+    - mysql -u root
+    - CREATE USER 'user'@'localhost' IDENTIFIED BY '123';
+    - GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost';
+    - FLUSH PRIVILEGES;
+    - EXIT;
+
+
 
 --> IP estático
     - sudo nano /etc/dhcpcd.conf
     - static ip_address=192.168.0.250/16
-
---> Adafruit
-    -
-    -
 
 --> Clonando do github
     -
