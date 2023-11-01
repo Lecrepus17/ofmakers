@@ -60,3 +60,26 @@ mysql -u root -
 chatgpt
 
 sudo pip3 install adafruit-circuitpython-dht
+
+
+TÓPICOS
+--> Mysql
+    - 
+    -
+
+--> Laravel (PHP artisan)
+    -
+    -
+
+--> IP estático
+    - sudo nano /etc/dhcpcd.conf
+    - static ip_address=192.168.0.250/16
+
+--> Adafruit
+    -
+    -
+
+--> Clonando do github
+    -
+    -
+

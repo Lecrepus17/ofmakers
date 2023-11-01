@@ -4,17 +4,29 @@ TÓPICOS
     -
 
 --> IP estático
+    - sudo ufw allow 8000/tcp
+    - para nomear um ip na maquina local
+        - sudo nano /etc/hosts 
+    - colocar ip e o nome
+        - 192.168.0.250  ofmakers
     - sudo nano /etc/dhcpcd.conf
     - static ip_address=192.168.0.250/16
+
+    *DESLIGAR E LIGAR WIFI PARA funcionar*
 
 --> Adafruit
     -
     -
 
 --> Clonando do github
-    -
-    -
+    - sudo apt-get install git
+    - git clone <URL_DO_REPOSITÓRIO>
 
 --> Laravel (PHP artisan)
-    -
-    -
+    - Acessar a pasta
+        - cd ofmakers
+        - composer install
+        - cp .env.example .env
+        - php artisan key:generate
+        - php artisan migrate 
+    
