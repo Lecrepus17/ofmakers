@@ -1,0 +1,20 @@
+TÓPICOS
+--> Mysql
+    - 
+    -
+
+--> IP estático
+    - sudo nano /etc/dhcpcd.conf
+    - static ip_address=192.168.0.250/16
+
+--> Adafruit
+    -
+    -
+
+--> Clonando do github
+    -
+    -
+
+--> Laravel (PHP artisan)
+    -
+    -
