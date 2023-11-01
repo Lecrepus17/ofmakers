@@ -49,3 +49,14 @@ como fazer um ip estático num rasp
 
 sudo nano /etc/dhcpcd.conf
 static ip_address=192.168.0.250/16
+
+
+
+
+
+baixar sql, temos que descobrir
+
+mysql -u root -
+chatgpt
+
+sudo pip3 install adafruit-circuitpython-dht
