@@ -1,7 +1,7 @@
 TÓPICOS
 --> Mysql
     - mysql -u root -p 
-    - sudo apt install phpmyadmin
+    - sudo apt install mariadb-server
     - sudo service mysql start
     - sudo service mysql stop
     - sudo mysqld_safe --skip-grant-tables &
@@ -30,9 +30,16 @@ TÓPICOS
 
 --> Laravel (PHP artisan)
     - Acessar a pasta
-        - cd ofmakers
+        - cd ofmakers/termometro
+        - sudo apt-get install composer
         - composer install
         - cp .env.example .env
         - php artisan key:generate
         - php artisan migrate 
     
+
+sudo pip install adafruit-circuitpython-dht
+pip install mysql-connector-python
+pip install RPi.GPIO
+sudo apt install python3-pip
+sudo apt install mariadb
