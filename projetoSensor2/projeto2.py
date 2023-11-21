@@ -68,7 +68,7 @@ while True:
           filename = ("{}/{}{}{}_dados.txt".format( foldername_m, year, monthName, day_str))
           # fechando conexão com arquivo
           f = open(filename, "a")
-          f.close
+          f.close()
           # finaliza conexão
           db.close()
         else:

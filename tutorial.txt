@@ -1,26 +1,30 @@
 TÓPICOS
 --> Mysql
-    - mysql -u root -p 
-    - sudo apt install mariadb-server
-    - sudo service mysql start
-    - sudo service mysql stop
-    - sudo mysqld_safe --skip-grant-tables &
-    - mysql -u root
+    - sudo apt install mysql-server
+    - sudo service mysql status
+    - sudo mysql
     - CREATE USER 'user'@'localhost' IDENTIFIED BY '123';
     - GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost';
     - FLUSH PRIVILEGES;
     - EXIT;
 
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt install php
+sudo apt install php-curl
+sudo apt install php-xml
+sudo apt install php-mysql
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-22-04
 
 
---> IP estático
-    - sudo ufw allow 8000/tcp
+
+
+
+--> Nomeação do ip
     - para nomear um ip na maquina local
         - sudo nano /etc/hosts 
     - colocar ip e o nome
         - 192.168.0.250  ofmakers
-    - sudo nano /etc/dhcpcd.conf
-    - static ip_address=192.168.0.250/16
 
     *DESLIGAR E LIGAR WIFI PARA funcionar*
 
@@ -29,6 +33,7 @@ TÓPICOS
     - git clone https://github.com/Lecrepus17/ofmakers
 
 --> Laravel (PHP artisan)
+    - sudo ufw allow 8000/tcp
     - Acessar a pasta
         - cd ofmakers/termometro
         - sudo apt-get install composer
@@ -37,9 +42,19 @@ TÓPICOS
         - php artisan key:generate
         - php artisan migrate 
     
-
-sudo pip install adafruit-circuitpython-dht
-pip install mysql-connector-python
-pip install RPi.GPIO
 sudo apt install python3-pip
-sudo apt install mariadb
+sudo pip3 install adafruit-circuitpython-dht
+pip3 install mysql-connector-python
+pip install RPi.GPIO
+sudo python3 projeto2.py
+
+
+
+
+
+    - mysql -u root -p 
+    - sudo apt install mariadb-server
+    - sudo service mysql start
+    - sudo service mysql stop
+    - sudo mysqld_safe --skip-grant-tables &
+    - mysql -u root
