@@ -18,8 +18,8 @@ month_old = 0
 db = mysql.connector.connect(
 host='localhost',
 database='termometro',
-user='user',
-password='123'
+user='root',
+password=''
 )
 while True:
     try:
@@ -83,8 +83,8 @@ while True:
           db = mysql.connector.connect(
           host='localhost',
           database='termometro',
-          user='user',
-          password='123'
+          user='root',
+          password=''
           )
 
           # Criando um cursor para executar consultas SQL
@@ -104,7 +104,7 @@ while True:
           # Confirmar a transação
           db.commit()
         # Cooldown da função
-          time.sleep(10.0)
+          time.sleep(300.0)
     except RuntimeError as error:
         # Errors happen fairly often, DHT's are hard to read, just keep going
         print(error.args[0])
