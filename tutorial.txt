@@ -1,60 +1,71 @@
 TÓPICOS
---> Mysql
+
+* AJUSTAR HORÁRIO DA MÁQUINA;
+
+1 - MYSQL:
+    - sudo apt-get update
+    - sudo apt-get upgrade -y
     - sudo apt install mysql-server
-    - sudo service mysql status
     - sudo mysql
     - CREATE USER 'user'@'localhost' IDENTIFIED BY '123';
     - GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost';
-    - FLUSH PRIVILEGES;
     - EXIT;
 
-sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt install php
-sudo apt install php-curl
-sudo apt install php-xml
-sudo apt install php-mysql
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-22-04
+2 - PHP:
+    - sudo apt install php
+    - sudo apt install php-curl
+    - sudo apt install curl
+    - sudo apt install php-xml
+    - sudo apt install php-mysql
 
+3 - COMPOSER:
+    - acessar https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-22-04
+        * step 1 e 2 
 
-
-
-
---> Nomeação do ip
-    - para nomear um ip na maquina local
-        - sudo nano /etc/hosts 
-    - colocar ip e o nome
-        - 192.168.0.250  ofmakers
-
-    *DESLIGAR E LIGAR WIFI PARA funcionar*
-
---> Clonando do github
-    - sudo apt-get install git
+4 - CLONAR DO GIT:
+    - sudo apt install git   
     - git clone https://github.com/Lecrepus17/ofmakers
 
---> Laravel (PHP artisan)
-    - sudo ufw allow 8000/tcp
-    - Acessar a pasta
+
+5 - LARAVEL:
         - cd ofmakers/termometro
-        - sudo apt-get install composer
         - composer install
         - cp .env.example .env
+        * configurar name e password banco de dados no arquivo .env
         - php artisan key:generate
         - php artisan migrate 
     
-sudo apt install python3-pip
-sudo pip3 install adafruit-circuitpython-dht
-pip3 install mysql-connector-python
-pip install RPi.GPIO
-sudo python3 projeto2.py
+6 - PYTHON:
+    - cd /projetoSensor
+    - sudo apt install python3-pip
+    - pip3 install adafruit-circuitpython-dht
+    - pip3 install mysql-connector-python
+    - pip install RPi.GPIO
+    - pip3 install adafruit-blinka
+    - sudo apt-get install python3-rpi.gpio
+
+* em caso de erro com um modulo python:
+    - pip3 uninstall <nome-modulo>
+    - sudo pip3 install <nome-modulo>
+
+
+7 - INICIAR PROGRAMA:
+    - Acessar o arquivo programa2.py, salvar(Ctrl+o), e sair(Ctrl+x)
+    - nano projeto2.py
+    - sudo python3 projeto2.py
+    - Abrir uma nova aba no terminal:
+        - cd ofmakers/termometro
+        - php artisan serve
+
+* caso tenha ufw
+    - sudo ufw allow 8000/tcp
 
 
 
+8 - NOMEAÇÃO DE IP:
+    - para nomear um ip na maquina local:
+        - sudo nano /etc/hosts 
+    - colocar ip e o nome:
+        - 192.168.0.250  ofmakers
 
-
-    - mysql -u root -p 
-    - sudo apt install mariadb-server
-    - sudo service mysql start
-    - sudo service mysql stop
-    - sudo mysqld_safe --skip-grant-tables &
-    - mysql -u root
+*DESLIGAR E LIGAR WIFI PARA funcionar*

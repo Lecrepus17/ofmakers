@@ -18,8 +18,8 @@ month_old = 0
 db = mysql.connector.connect(
 host='localhost',
 database='termometro',
-user='root',
-password=''
+user='user',
+password='123'
 )
 while True:
     try:
@@ -83,8 +83,8 @@ while True:
           db = mysql.connector.connect(
           host='localhost',
           database='termometro',
-          user='root',
-          password=''
+          user='user',
+          password='123'
           )
 
           # Criando um cursor para executar consultas SQL
