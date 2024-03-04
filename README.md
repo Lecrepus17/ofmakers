@@ -1,8 +1,8 @@
 # ofmakers
-A pasta termometro é usada apenas para o rasp com a adição dos componentes desejados.
+A pasta projetoSensor é usada apenas para o rasp com a adição dos componentes desejados.
 Comandos para utilização do código para testes.
 
-  cd projetoSensor2
+  cd termometro
   composer install
   cp .env.example .env
   php artisan key:generate 
